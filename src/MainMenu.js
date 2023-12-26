@@ -1,9 +1,9 @@
 /**@type {cc.Layer} */
-var MainSceneLayer = cc.Layer.extend({
+let MainSceneLayer = cc.Layer.extend({
     // sprite:null,
     /**@type {(cc.Node|ccui.Layout)[]} 主界面菜单选项 */
     menuList: [],
-    ctor:function () {
+    ctor: function () {
         //////////////////////////////
         // 1. super init first
         this._super();
@@ -14,8 +14,8 @@ var MainSceneLayer = cc.Layer.extend({
         // ask the window size
         // var size = cc.winSize;
 
-        var mainscene = ccs.load(res.MainScene_json);
-        let Scene = mainscene.node;
+        let mainScene = ccs.load(res.MainScene_json);
+        let Scene = mainScene.node;
         this.addChild(Scene);
 
         /* you can create scene with following comment code instead of using csb file.
@@ -46,54 +46,58 @@ var MainSceneLayer = cc.Layer.extend({
     /**初始化menuList相关控件
      * @param {cc.Node} Scene 主界面ui节点
      */
-    initMenuList: function(Scene) {
+    initMenuList: function (Scene) {
         /**@type {cc.Node|ccui.Layout} 中间容器 */
-        let center = Scene.getChildByName("main").getChildByName("center");
+        let center = Scene.getChildByName("main").getChildByName("Center");
         /**@type {cc.Node|ccui.ListView} 中间的列表容器 */
-        let memuListNode = center.getChildByName("menuList");
+        let menuListNode = center.getChildByName("menuList");
         /**@type {Number} 最大菜单数 */
-        let menuListLength = memuListNode.getChildrenCount();
+        let menuListLength = menuListNode.getChildrenCount();
         for (let i = 0; i < menuListLength; i++) {
-            let menu = memuListNode.getChildByName("item" + i);
+            let menu = menuListNode.getChildByName("item" + i);
             menu._but = menu.getChildByName("but");
             this.menuList.push(menu);
-        };
-        let memuList = this.menuList;
+        }
+        let menuList = this.menuList;
         let menu0 = menuList[0];
         /**@type {ccui.Button|cc.Node} */
         let menu0But = menu0._but;
-        menu0But.addTouchEventListener(function () {
+        menu0But.addTouchEventListener(function (sender, type) {
+            if (type != 2) return;
             cc.log("点击创建按钮")
         }, this);
 
         let menu1 = menuList[1];
         /**@type {ccui.Button|cc.Node} */
-        let menu1But = menu0._but;
-        menu1But.addTouchEventListener(function () {
+        let menu1But = menu1._but;
+        menu1But.addTouchEventListener(function (sender, type) {
+            if (type != 2) return;
             cc.log("点击读取按钮")
         }, this);
 
         if (menuListLength > 2) {
-            for (let i = 2; i < menuListLength-1; i++) {
+            for (let i = 2; i < menuListLength - 1; i++) {
                 let otherMenu = menuList[i];
-                otherMenu._but.addTouchEventListener(function () {
+                otherMenu._but.addTouchEventListener(function (sender, type) {
+                    if (type != 2) return;
                     cc.log("点击未定义按钮")
                 }, this);
-            };
-            let menuExit = menuList[-1];
-            menuExix.addTouchEventListener(this.Exit, this);
-        };
+            }
+            let menuExit = menuList[menuListLength - 1];
+            menuExit._but.addTouchEventListener(this.Exit, this);
+        }
     },
-    Exit: function () {
+    Exit: function (sender, type = 2) {
+        if (type != 2) return;
         cc.log("执行退出逻辑");
         this.onExit();
     },
 });
 
-var MainScene = cc.Scene.extend({
-    onEnter:function () {
+let MainScene = cc.Scene.extend({
+    onEnter: function () {
         this._super();
-        var layer = new MainSceneLayer();
+        let layer = new MainSceneLayer();
         this.addChild(layer);
     }
 });

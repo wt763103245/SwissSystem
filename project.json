@@ -12,7 +12,6 @@
     "modules" : ["cocos2d", "cocostudio"],
 
     "jsList" : [
-        "src/tools/addFunc",
         "src/resource.js",
         "src/MainMenu.js"
     ]
