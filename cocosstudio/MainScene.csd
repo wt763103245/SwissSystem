@@ -261,7 +261,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="item" CanEdit="False" Visible="False" ActionTag="-293963937" VisibleForFrame="False" Tag="9" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="211.2000" RightMargin="-211.2000" TopMargin="128.0000" BottomMargin="128.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+                  <AbstractNodeData Name="item" Visible="False" ActionTag="-293963937" VisibleForFrame="False" Tag="9" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="211.2000" RightMargin="-211.2000" TopMargin="128.0000" BottomMargin="128.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
                     <Size X="192.0000" Y="64.0000" />
                     <Children>
                       <AbstractNodeData Name="bg" CanEdit="False" Visible="False" ActionTag="-1828265004" VisibleForFrame="False" Tag="10" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="73.0000" RightMargin="73.0000" TopMargin="9.0000" BottomMargin="9.0000" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">

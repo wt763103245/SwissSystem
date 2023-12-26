@@ -65,6 +65,8 @@ let MainSceneLayer = cc.Layer.extend({
         menu0But.addTouchEventListener(function (sender, type) {
             if (type != 2) return;
             cc.log("点击创建按钮")
+            let newUi = new Main1Layer();
+            this.addChild(newUi);
         }, this);
 
         let menu1 = menuList[1];
