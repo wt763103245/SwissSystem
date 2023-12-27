@@ -1385,9 +1385,11 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
+                "ComboBoxIndex": 1,
                 "SingleColor": {
-                  "R": 150,
-                  "G": 200
+                  "R": 26,
+                  "G": 26,
+                  "B": 26
                 },
                 "FirstColor": {
                   "R": 150,
@@ -1502,7 +1504,7 @@
                         },
                         "Position": {
                           "X": 278.4,
-                          "Y": 384.0
+                          "Y": 403.2
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1514,7 +1516,7 @@
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
                           "X": 0.5,
-                          "Y": 0.6
+                          "Y": 0.63
                         },
                         "PreSize": {
                           "X": 0.0718,
@@ -1522,14 +1524,15 @@
                         },
                         "LeftMargin": 258.4,
                         "RightMargin": 258.4,
-                        "TopMargin": 246.0,
-                        "BottomMargin": 374.0,
+                        "TopMargin": 226.8,
+                        "BottomMargin": 393.2,
                         "Tag": 44,
                         "ActionTag": 1289973333,
                         "Size": {
                           "X": 40.0,
                           "Y": 20.0
                         },
+                        "VisibleForFrame": false,
                         "Name": "title",
                         "ctype": "TextObjectData"
                       },
@@ -1587,7 +1590,7 @@
                         "ctype": "TextObjectData"
                       },
                       {
-                        "FontSize": 20,
+                        "FontSize": 24,
                         "IsCustomSize": true,
                         "LabelText": "",
                         "PlaceHolderText": "请输入比赛名称",
@@ -1612,22 +1615,107 @@
                           "X": 0.5,
                           "Y": 0.55
                         },
+                        "PercentWidthEnable": true,
+                        "PercentHeightEnable": true,
+                        "PercentWidthEnabled": true,
+                        "PercentHeightEnabled": true,
                         "PreSize": {
-                          "X": 0.1796,
-                          "Y": 0.0312
+                          "X": 0.31,
+                          "Y": 0.04
                         },
                         "LeftMargin": 278.4,
-                        "RightMargin": 178.4,
-                        "TopMargin": 278.0,
-                        "BottomMargin": 342.0,
+                        "RightMargin": 105.792,
+                        "TopMargin": 275.2,
+                        "BottomMargin": 339.2,
                         "Tag": 38,
                         "ActionTag": -1281475856,
                         "Size": {
-                          "X": 100.0,
-                          "Y": 20.0
+                          "X": 172.608,
+                          "Y": 25.6
                         },
                         "Name": "gameName",
                         "ctype": "TextFieldObjectData"
+                      },
+                      {
+                        "FontSize": 14,
+                        "ButtonText": "创建",
+                        "TextColor": {
+                          "R": 65,
+                          "G": 65,
+                          "B": 70
+                        },
+                        "DisabledFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Disable.png",
+                          "Plist": ""
+                        },
+                        "PressedFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Press.png",
+                          "Plist": ""
+                        },
+                        "NormalFileData": {
+                          "Type": "Default",
+                          "Path": "Default/Button_Normal.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 16,
+                        "Scale9Height": 14,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 278.4,
+                          "Y": 281.6
+                        },
+                        "Scale": {
+                          "ScaleX": 1.5,
+                          "ScaleY": 1.5
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.44
+                        },
+                        "PercentWidthEnable": true,
+                        "PercentHeightEnable": true,
+                        "PercentWidthEnabled": true,
+                        "PercentHeightEnabled": true,
+                        "PreSize": {
+                          "X": 0.12,
+                          "Y": 0.04
+                        },
+                        "LeftMargin": 244.992,
+                        "RightMargin": 244.992,
+                        "TopMargin": 345.6,
+                        "BottomMargin": 268.8,
+                        "Tag": 131,
+                        "ActionTag": -1316619107,
+                        "Size": {
+                          "X": 66.816,
+                          "Y": 25.6
+                        },
+                        "Name": "but",
+                        "ctype": "ButtonObjectData"
                       }
                     ],
                     "ActionTag": -264383020,
@@ -2683,7 +2771,6 @@
                       "X": 556.8,
                       "Y": 640.0
                     },
-                    "VisibleForFrame": false,
                     "Name": "pan1",
                     "ctype": "PanelObjectData"
                   },

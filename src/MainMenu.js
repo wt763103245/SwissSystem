@@ -65,7 +65,7 @@ let MainSceneLayer = cc.Layer.extend({
         menu0But.addTouchEventListener(function (sender, type) {
             if (type != 2) return;
             cc.log("点击创建按钮")
-            let newUi = new Main1Layer();
+            let newUi = new CreateLayer();
             this.addChild(newUi);
         }, this);
 
@@ -75,6 +75,9 @@ let MainSceneLayer = cc.Layer.extend({
         menu1But.addTouchEventListener(function (sender, type) {
             if (type != 2) return;
             cc.log("点击读取按钮")
+            //todo:打开选择存档界面
+            // let newUi = new CreateLayer(data);
+            // this.addChild(newUi);
         }, this);
 
         if (menuListLength > 2) {
@@ -83,7 +86,10 @@ let MainSceneLayer = cc.Layer.extend({
                 otherMenu._but.addTouchEventListener(function (sender, type) {
                     if (type != 2) return;
                     cc.log("点击未定义按钮")
+                    //todo: 未设定
                 }, this);
+                //test暂时隐藏
+                otherMenu.setVisible(false);
             }
             let menuExit = menuList[menuListLength - 1];
             menuExit._but.addTouchEventListener(this.Exit, this);
