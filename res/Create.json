@@ -100,15 +100,91 @@
                   "X": 1.0,
                   "Y": 1.0
                 },
-                "Tag": 29,
-                "ActionTag": -1481203443,
+                "Tag": 129,
+                "ActionTag": 1956257203,
                 "Size": {
                   "X": 960.0,
                   "Y": 640.0
                 },
-                "VisibleForFrame": false,
                 "Name": "bg",
                 "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "退出",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Press.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Normal.png",
+                  "Plist": ""
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 16,
+                "Scale9Height": 14,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "Position": {
+                  "X": 950.4,
+                  "Y": 633.6
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.99,
+                  "Y": 0.99
+                },
+                "PreSize": {
+                  "X": 0.0479,
+                  "Y": 0.0562
+                },
+                "LeftMargin": 904.4,
+                "RightMargin": 9.6,
+                "TopMargin": 6.4,
+                "BottomMargin": 597.6,
+                "Tag": 130,
+                "ActionTag": -1068230636,
+                "Size": {
+                  "X": 46.0,
+                  "Y": 36.0
+                },
+                "Name": "exit",
+                "ctype": "ButtonObjectData"
               },
               {
                 "ClipAble": false,
@@ -125,6 +201,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleY": 0.5
@@ -176,6 +254,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -247,7 +327,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "RightMargin": 0.0,
                         "BottomMargin": 256.0,
                         "Tag": 56,
                         "Children": [
@@ -425,7 +504,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "RightMargin": 0.0,
                         "TopMargin": 64.0,
                         "BottomMargin": 192.0,
                         "Tag": 59,
@@ -605,7 +683,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "RightMargin": 0.0,
                         "TopMargin": 128.0,
                         "BottomMargin": 128.0,
                         "Tag": 62,
@@ -785,7 +862,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "RightMargin": 0.0,
                         "TopMargin": 192.0,
                         "BottomMargin": 64.0,
                         "Tag": 65,
@@ -965,7 +1041,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "RightMargin": 0.0,
                         "TopMargin": 256.0,
                         "Tag": 68,
                         "Children": [
@@ -1372,6 +1447,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -1551,58 +1628,6 @@
                         },
                         "Name": "gameName",
                         "ctype": "TextFieldObjectData"
-                      },
-                      {
-                        "FontSize": 20,
-                        "LabelText": "比赛名称： ",
-                        "OutlineColor": {
-                          "G": 0,
-                          "B": 0
-                        },
-                        "ShadowColor": {
-                          "R": 110,
-                          "G": 110,
-                          "B": 110
-                        },
-                        "ShadowOffsetX": 2.0,
-                        "ShadowOffsetY": -2.0,
-                        "AnchorPoint": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 0.5
-                        },
-                        "Position": {
-                          "X": 278.4,
-                          "Y": 288.0
-                        },
-                        "Scale": {
-                          "ScaleX": 1.0,
-                          "ScaleY": 1.0
-                        },
-                        "CColor": {},
-                        "IconVisible": false,
-                        "PositionPercentXEnabled": true,
-                        "PositionPercentYEnabled": true,
-                        "PrePosition": {
-                          "X": 0.5,
-                          "Y": 0.45
-                        },
-                        "PreSize": {
-                          "X": 0.1976,
-                          "Y": 0.0312
-                        },
-                        "LeftMargin": 168.4,
-                        "RightMargin": 278.4,
-                        "TopMargin": 342.0,
-                        "BottomMargin": 278.0,
-                        "Tag": 37,
-                        "ActionTag": -662307994,
-                        "Size": {
-                          "X": 110.0,
-                          "Y": 20.0
-                        },
-                        "VisibleForFrame": false,
-                        "Name": "text1",
-                        "ctype": "TextObjectData"
                       }
                     ],
                     "ActionTag": -264383020,
@@ -1729,6 +1754,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 1.0,
@@ -1780,6 +1807,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 1.0,
@@ -1833,6 +1862,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
@@ -1862,7 +1893,7 @@
                               "X": 1.0,
                               "Y": 0.2
                             },
-                            "TopMargin": -223.9999,
+                            "TopMargin": -224.0,
                             "BottomMargin": 480.0,
                             "Tag": 73,
                             "Children": [
@@ -2247,7 +2278,7 @@
                               "ScaleY": 1.0
                             },
                             "Position": {
-                              "X": 138.3966,
+                              "X": 138.3926,
                               "Y": 256.0
                             },
                             "Scale": {
@@ -2266,8 +2297,8 @@
                               "X": 0.2874,
                               "Y": 0.0625
                             },
-                            "LeftMargin": 58.3966,
-                            "RightMargin": 140.0034,
+                            "LeftMargin": 58.3926,
+                            "RightMargin": 140.0074,
                             "TopMargin": 64.0,
                             "BottomMargin": 236.0,
                             "Tag": 84,
@@ -2910,7 +2941,7 @@
                               "X": 1.0,
                               "Y": 0.2
                             },
-                            "TopMargin": -223.9999,
+                            "TopMargin": -224.0,
                             "BottomMargin": 480.0,
                             "Tag": 97,
                             "Children": [
@@ -3183,7 +3214,7 @@
                               "ScaleY": 1.0
                             },
                             "Position": {
-                              "X": 138.3966,
+                              "X": 138.3926,
                               "Y": 256.0
                             },
                             "Scale": {
@@ -3202,8 +3233,8 @@
                               "X": 0.2874,
                               "Y": 0.0625
                             },
-                            "LeftMargin": 58.3966,
-                            "RightMargin": 140.0034,
+                            "LeftMargin": 58.3926,
+                            "RightMargin": 140.0074,
                             "TopMargin": 64.0,
                             "BottomMargin": 236.0,
                             "Tag": 104,
@@ -3846,7 +3877,7 @@
                               "X": 1.0,
                               "Y": 0.2
                             },
-                            "TopMargin": -223.9999,
+                            "TopMargin": -224.0,
                             "BottomMargin": 480.0,
                             "Tag": 116,
                             "Children": [
@@ -4681,7 +4712,7 @@
                               "X": 1.0,
                               "Y": 0.2
                             },
-                            "TopMargin": -223.9999,
+                            "TopMargin": -224.0,
                             "BottomMargin": 480.0,
                             "Tag": 139,
                             "Children": [
@@ -5072,6 +5103,8 @@
                             "ColorVector": {
                               "ScaleY": 1.0
                             },
+                            "Scale9Width": 1,
+                            "Scale9Height": 1,
                             "TouchEnable": true,
                             "AnchorPoint": {
                               "ScaleX": 0.5,
@@ -5121,6 +5154,8 @@
                                 "ColorVector": {
                                   "ScaleY": 1.0
                                 },
+                                "Scale9Width": 1,
+                                "Scale9Height": 1,
                                 "TouchEnable": true,
                                 "AnchorPoint": {
                                   "ScaleX": 0.5,
@@ -5174,6 +5209,8 @@
                                 "ColorVector": {
                                   "ScaleY": 1.0
                                 },
+                                "Scale9Width": 1,
+                                "Scale9Height": 1,
                                 "TouchEnable": true,
                                 "AnchorPoint": {
                                   "ScaleX": 0.5,
@@ -5203,7 +5240,7 @@
                                   "X": 1.0,
                                   "Y": 0.2
                                 },
-                                "TopMargin": -223.9999,
+                                "TopMargin": -224.0,
                                 "BottomMargin": 480.0,
                                 "Tag": 159,
                                 "Children": [
@@ -5772,7 +5809,6 @@
                       "X": 556.8,
                       "Y": 640.0
                     },
-                    "VisibleForFrame": false,
                     "Name": "pan4",
                     "ctype": "PanelObjectData"
                   }

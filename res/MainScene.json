@@ -339,8 +339,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "BottomMargin": 256.0,
                         "Tag": 12,
                         "Children": [
@@ -518,8 +516,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 64.0,
                         "BottomMargin": 192.0,
                         "Tag": 15,
@@ -699,8 +695,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 128.0,
                         "BottomMargin": 128.0,
                         "Tag": 18,
@@ -880,8 +874,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 192.0,
                         "BottomMargin": 64.0,
                         "Tag": 21,
@@ -1061,8 +1053,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 256.0,
                         "Tag": 24,
                         "Children": [
