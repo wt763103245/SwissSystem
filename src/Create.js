@@ -1,4 +1,4 @@
-/**@type {cc.Layer} */
+/**@type {cc.Layer} 创建界面 */
 let Main1Layer = cc.Layer.extend({
     // sprite:null,
     /**@type {(cc.Node|ccui.Layout)[]} 主界面菜单选项 */
