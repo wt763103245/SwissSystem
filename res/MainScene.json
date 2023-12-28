@@ -69,6 +69,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -102,12 +104,15 @@
             "Children": [
               {
                 "FileData": {
-                  "Type": "Default",
-                  "Path": "Default/ImageFile.png",
+                  "Type": "Normal",
+                  "Path": "kenney_ui-pack/PNG/grey_panel.png",
                   "Plist": ""
                 },
-                "Scale9Width": 46,
-                "Scale9Height": 46,
+                "Scale9Enable": true,
+                "Scale9OriginX": 33,
+                "Scale9OriginY": 33,
+                "Scale9Width": 34,
+                "Scale9Height": 34,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
@@ -133,23 +138,25 @@
                 "PercentWidthEnabled": true,
                 "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
+                  "X": 0.21,
+                  "Y": 0.52
                 },
+                "LeftMargin": 379.2,
+                "RightMargin": 379.2,
+                "TopMargin": 153.6,
+                "BottomMargin": 153.6,
                 "Tag": 4,
                 "ActionTag": -549621885,
                 "Size": {
-                  "X": 960.0,
-                  "Y": 640.0
+                  "X": 201.6,
+                  "Y": 332.8
                 },
-                "VisibleForFrame": false,
                 "Name": "bg",
                 "ctype": "ImageViewObjectData"
               },
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 150,
                   "G": 200
@@ -162,59 +169,8 @@
                 "ColorVector": {
                   "ScaleY": 1.0
                 },
-                "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 0.5,
-                  "ScaleY": 0.5
-                },
-                "Position": {
-                  "X": 480.0,
-                  "Y": 320.0
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.5,
-                  "Y": 0.5
-                },
-                "PercentWidthEnable": true,
-                "PercentHeightEnable": true,
-                "PercentWidthEnabled": true,
-                "PercentHeightEnabled": true,
-                "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
-                },
-                "Tag": 5,
-                "ActionTag": -2002625173,
-                "Size": {
-                  "X": 960.0,
-                  "Y": 640.0
-                },
-                "Name": "bg_pan",
-                "ctype": "PanelObjectData"
-              },
-              {
-                "ClipAble": false,
-                "BackColorAlpha": 102,
-                "SingleColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "FirstColor": {
-                  "R": 150,
-                  "G": 200
-                },
-                "EndColor": {},
-                "ColorVector": {
-                  "ScaleY": 1.0
-                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
                 "TouchEnable": true,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
@@ -268,6 +224,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -397,25 +355,22 @@
                               "B": 70
                             },
                             "DisabledFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Disable.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/red_button10.png",
                               "Plist": ""
                             },
                             "PressedFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Press.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/yellow_button01.png",
                               "Plist": ""
                             },
                             "NormalFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Normal.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/yellow_button00.png",
                               "Plist": ""
                             },
-                            "Scale9Enable": true,
-                            "Scale9OriginX": 15,
-                            "Scale9OriginY": 11,
-                            "Scale9Width": 16,
-                            "Scale9Height": 14,
+                            "Scale9Width": 190,
+                            "Scale9Height": 49,
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -575,25 +530,24 @@
                               "B": 70
                             },
                             "DisabledFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Disable.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/red_button10.png",
                               "Plist": ""
                             },
                             "PressedFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Press.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button01.png",
                               "Plist": ""
                             },
                             "NormalFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Normal.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button00.png",
                               "Plist": ""
                             },
-                            "Scale9Enable": true,
                             "Scale9OriginX": 15,
                             "Scale9OriginY": 11,
-                            "Scale9Width": 16,
-                            "Scale9Height": 14,
+                            "Scale9Width": 160,
+                            "Scale9Height": 27,
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -1111,25 +1065,24 @@
                               "B": 70
                             },
                             "DisabledFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Disable.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/red_button10.png",
                               "Plist": ""
                             },
                             "PressedFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Press.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button01.png",
                               "Plist": ""
                             },
                             "NormalFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Normal.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button00.png",
                               "Plist": ""
                             },
-                            "Scale9Enable": true,
                             "Scale9OriginX": 15,
                             "Scale9OriginY": 11,
-                            "Scale9Width": 16,
-                            "Scale9Height": 14,
+                            "Scale9Width": 160,
+                            "Scale9Height": 27,
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -1215,6 +1168,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -1416,7 +1371,13 @@
         "Default/Button_Normal.png",
         "Default/Button_Press.png",
         "Default/ImageFile.png",
-        "HelloWorld.png"
+        "HelloWorld.png",
+        "kenney_ui-pack/PNG/blue_button00.png",
+        "kenney_ui-pack/PNG/blue_button01.png",
+        "kenney_ui-pack/PNG/grey_panel.png",
+        "kenney_ui-pack/PNG/red_button10.png",
+        "kenney_ui-pack/PNG/yellow_button00.png",
+        "kenney_ui-pack/PNG/yellow_button01.png"
       ],
       "ctype": "GameFileData"
     }

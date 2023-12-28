@@ -40,7 +40,7 @@ let CreateLayer = cc.Layer.extend({
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
      */
-    ctor: function (data = null) {
+    ctor: function (data = {}) {
         this._super();
 
         /////////////////////////////
@@ -111,9 +111,9 @@ let CreateLayer = cc.Layer.extend({
             function (pan) {
                 /**@type {ccui.TextField|cc.Node} 比赛名称 */
                 let gameName = pan.getChildByName("gameName");
+                let data = this.data;
                 /**@type {String} 获得当前比赛的名称 */
-                let gameNameText = this.data.name;
-                gameNameText = gameNameText ? gameNameText : "";
+                let gameNameText = ("name" in data) ? data.name : "";
                 //初始化清空
                 if (gameName.getString() !== gameNameText) gameName.setString(gameNameText);
                 pan._gameName = gameName;
@@ -162,14 +162,20 @@ let CreateLayer = cc.Layer.extend({
                 set.addTouchEventListener(function (sender, type) {
                     if (type !== 2) return;
                     let nameStr = name.getString();
-                    if (!nameStr) return;
+                    if (!nameStr) {
+                        this.addChild(new MsgLayer("!请输入玩家名称"));
+                        return;
+                    }
                     let scoreStr = score.getString();
-                    if (!scoreStr) return;
-                    let data = {
+                    scoreStr = Number(scoreStr);
+                    if (!scoreStr) {
+                        this.addChild(new MsgLayer("!请输入正确的分数"));
+                        return;
+                    }
+                    this.playerData = {
                         name: nameStr,
                         score: scoreStr,
-                    }
-                    this.playerData = data;
+                    };
                     if (!this.data || "player" in this.data) this.data["player"] = {};
                     this.data.player[nameStr] = scoreStr;
                 }, this);
@@ -248,7 +254,7 @@ let CreateLayer = cc.Layer.extend({
             //初始化显示第一个
             child.setVisible(i === 0);
             let _func = funcList[i];
-            if (_func) _func(child);
+            if (_func) (_func.bind(this))(child);
             //添加到内容
             this.centerList.push(child);
         }
