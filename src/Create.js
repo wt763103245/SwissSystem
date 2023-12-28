@@ -128,9 +128,8 @@ let CreateLayer = cc.Layer.extend({
             },
             /**玩家信息面板
              * @param {ccui.Layout|cc.Node} pan 玩家信息面板
-             * @param {{String: Number}} data 玩家数据
              */
-            function (pan, data=null) {
+            function (pan) {
                 //右侧ui
                 /**@type {ccui.Layout|cc.Node} 右侧面板 */
                 let right = pan.getChildByName("right");
