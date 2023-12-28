@@ -29,6 +29,13 @@ let CreateLayer = cc.Layer.extend({
     leftList: [],
     /**@type {(cc.Node|ccui.Layout)[]} 中部显示内容选项 */
     centerList: [],
+    /**@type {{name: String, score: Number}} 当前修改玩家的数据 */
+    playerData: {
+        /**@type {String} 名称 */
+        name: "玩家1名称",
+        /**@type {Number} 分数 */
+        score: 0,
+    },
     /**创建方法
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
@@ -68,10 +75,14 @@ let CreateLayer = cc.Layer.extend({
         */
 
         //保存到缓存中
-        this.data = data ? data : {};
+        this.initData(data);
         this.initUi(Scene);
 
         return true;
+    },
+    initData: function(data) {
+        this.data = data ? data : {};
+        this.playerData = {};
     },
     /**初始化ui
      * @param {cc.Node} Scene 主界面ui节点
@@ -120,16 +131,64 @@ let CreateLayer = cc.Layer.extend({
              * @param {{String: Number}} data 玩家数据
              */
             function (pan, data=null) {
-                //todo: 右侧面板
+                //右侧ui
                 /**@type {ccui.Layout|cc.Node} 右侧面板 */
                 let right = pan.getChildByName("right");
                 let text0 = right.getChildByName("text0");
                 let id = right.getChildByName("id");
                 for (let _node of [text0, id]) _node.setVisible(false);
-                /**@type {ccui.TextField|cc.Node} 玩家姓名ui */
-                let name = right.getChildByName("name");
-                //todo:当data有数据时，根据数据设定相关参数
 
+                let tempData = this.playerData;
+                tempData = tempData ? tempData : {};
+
+                //玩家名称
+                /**@type {ccui.TextField} 玩家姓名ui */
+                let name = right.getChildByName("name");
+                /**@type {String} 玩家名称 */
+                let nameStr = tempData.name;
+                nameStr = nameStr ? nameStr : "";
+                if (name.getString() !== nameStr) name.setString(nameStr);
+
+                //分数
+                /**@type {ccui.TextField} */
+                let score = right.getChildByName("score");
+                /**@type {String|Number} */
+                let scoreStr = tempData.score;
+                scoreStr = scoreStr ? scoreStr.toString() : "0";
+                if (score.getString() !== scoreStr) score.setString(scoreStr);
+
+                //保存ui
+                /**@type {ccui.Button} 添加按钮 */
+                let set = right.getChildByName("set");
+                set.addTouchEventListener(function (sender, type) {
+                    if (type !== 2) return;
+                    let nameStr = name.getString();
+                    if (!nameStr) return;
+                    let scoreStr = score.getString();
+                    if (!scoreStr) return;
+                    let data = {
+                        name: nameStr,
+                        score: scoreStr,
+                    }
+                    this.playerData = data;
+                    if (!this.data || "player" in this.data) this.data["player"] = {};
+                    this.data.player[nameStr] = scoreStr;
+                }, this);
+
+                //添加
+                /**@type {ccui.Button} 添加新玩家按钮 */
+                let add = right.getChildByName("add");
+                add.addTouchEventListener(function (sender, type) {
+                    if (type !== 2) return;
+                    if (name.getString() !== "") name.setString("");
+                    if (score.getString() !== "0") score.setString("0");
+                    this.playerData = {
+                        "name": "",
+                        "score": 0,
+                    }
+                }, this);
+
+                //左侧
                 /**@type {ccui.Layout|cc.Node} 左侧面板 */
                 let left = pan.getChildByName("left");
                 /**@type {ccui.ListView|cc.Node} 玩家列表容器 */
@@ -189,6 +248,8 @@ let CreateLayer = cc.Layer.extend({
             let child = center.getChildByName("pan" + i);
             //初始化显示第一个
             child.setVisible(i === 0);
+            let _func = funcList[i];
+            if (_func) _func(child);
             //添加到内容
             this.centerList.push(child);
         }
