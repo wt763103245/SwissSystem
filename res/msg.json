@@ -17,7 +17,6 @@
           {
             "ClipAble": false,
             "BackColorAlpha": 51,
-            "ComboBoxIndex": 1,
             "SingleColor": {
               "R": 150,
               "G": 200
@@ -30,6 +29,8 @@
             "ColorVector": {
               "ScaleY": 1.0
             },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
             "TouchEnable": true,
             "AnchorPoint": {
               "ScaleX": 0.5,
@@ -61,19 +62,21 @@
             "Children": [
               {
                 "FileData": {
-                  "Type": "Default",
-                  "Path": "Default/ImageFile.png",
+                  "Type": "Normal",
+                  "Path": "kenney_ui-pack/PNG/yellow_button13.png",
                   "Plist": ""
                 },
-                "Scale9Width": 46,
-                "Scale9Height": 46,
+                "Scale9OriginX": 62,
+                "Scale9OriginY": 16,
+                "Scale9Width": 66,
+                "Scale9Height": 17,
                 "AnchorPoint": {
                   "ScaleX": 0.5,
                   "ScaleY": 0.5
                 },
                 "Position": {
                   "X": 150.0,
-                  "Y": 15.0
+                  "Y": 13.2
                 },
                 "Scale": {
                   "ScaleX": 1.0,
@@ -85,23 +88,27 @@
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
                   "X": 0.5,
-                  "Y": 0.5
+                  "Y": 0.44
                 },
                 "PercentWidthEnable": true,
                 "PercentHeightEnable": true,
                 "PercentWidthEnabled": true,
                 "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
-                  "Y": 1.0
+                  "X": 0.6333,
+                  "Y": 1.6333
                 },
+                "LeftMargin": 55.0,
+                "RightMargin": 55.0,
+                "TopMargin": -7.7,
+                "BottomMargin": -11.3,
                 "Tag": 128,
                 "ActionTag": -1499737125,
                 "Size": {
-                  "X": 300.0,
-                  "Y": 30.0
+                  "X": 190.0,
+                  "Y": 49.0
                 },
-                "VisibleForFrame": false,
+                "Alpha": 103,
                 "Name": "bg",
                 "ctype": "ImageViewObjectData"
               },
@@ -134,7 +141,11 @@
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "CColor": {},
+                "CColor": {
+                  "R": 0,
+                  "G": 0,
+                  "B": 0
+                },
                 "IconVisible": false,
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
@@ -147,13 +158,15 @@
                 "PercentWidthEnabled": true,
                 "PercentHeightEnabled": true,
                 "PreSize": {
-                  "X": 1.0,
+                  "X": 0.6,
                   "Y": 1.0
                 },
+                "LeftMargin": 60.0,
+                "RightMargin": 60.0,
                 "Tag": 129,
                 "ActionTag": -1839782438,
                 "Size": {
-                  "X": 300.0,
+                  "X": 180.0,
                   "Y": 30.0
                 },
                 "Name": "text",
@@ -177,7 +190,7 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "Default/ImageFile.png"
+        "kenney_ui-pack/PNG/yellow_button13.png"
       ],
       "ctype": "GameFileData"
     }

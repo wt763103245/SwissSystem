@@ -6,27 +6,27 @@
       <ObjectData Name="Node" Tag="126" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="main" ActionTag="225143518" Tag="127" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="51" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="main" ActionTag="225143518" Tag="127" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="51" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="300.0000" Y="30.0000" />
             <Children>
-              <AbstractNodeData Name="bg" CanEdit="False" Visible="False" ActionTag="-1499737125" VisibleForFrame="False" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-                <Size X="300.0000" Y="30.0000" />
+              <AbstractNodeData Name="bg" ActionTag="-1499737125" Alpha="103" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="55.0000" RightMargin="55.0000" TopMargin="-7.7000" BottomMargin="-11.3000" LeftEage="62" RightEage="62" TopEage="16" BottomEage="16" Scale9OriginX="62" Scale9OriginY="16" Scale9Width="66" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="190.0000" Y="49.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="150.0000" Y="15.0000" />
+                <Position X="150.0000" Y="13.2000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+                <PrePosition X="0.5000" Y="0.4400" />
+                <PreSize X="0.6333" Y="1.6333" />
+                <FileData Type="Normal" Path="kenney_ui-pack/PNG/yellow_button13.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="text" ActionTag="-1839782438" Tag="129" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" IsCustomSize="True" FontSize="20" LabelText="消息文本" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="300.0000" Y="30.0000" />
+              <AbstractNodeData Name="text" ActionTag="-1839782438" Tag="129" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="60.0000" RightMargin="60.0000" IsCustomSize="True" FontSize="20" LabelText="消息文本" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="180.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="150.0000" Y="15.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
+                <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="1.0000" Y="1.0000" />
+                <PreSize X="0.6000" Y="1.0000" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
