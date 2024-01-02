@@ -162,68 +162,79 @@ let CreateLayer = cc.Layer.extend({
              * @param {ccui.Layout|cc.Node} pan 玩家信息面板
              */
             function (pan) {
-                //右侧ui
-                /**@type {ccui.Layout|cc.Node} 右侧面板 */
-                let right = pan.getChildByName("right");
-                let text0 = right.getChildByName("text0");
-                let id = right.getChildByName("id");
-                for (let _node of [text0, id]) _node.setVisible(false);
+                if (!pan._init) {
+                    //右侧ui
+                    /**@type {ccui.Layout|cc.Node} 右侧面板 */
+                    let right = pan.getChildByName("right");
+                    let text0 = right.getChildByName("text0");
+                    let id = right.getChildByName("id");
+                    for (let _node of [text0, id]) _node.setVisible(false);
+
+                    //玩家名称
+                    /**@type {ccui.TextField} 玩家姓名文本输入框 */
+                    let name = right.getChildByName("name");
+                    pan._name = name;
+
+                    //分数
+                    /**@type {ccui.TextField} 分数文本输入框 */
+                    let score = right.getChildByName("score");
+                    pan.score = score;
+
+                    //保存ui
+                    /**添加按钮 */
+                    right.getChildByName("set").addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        let nameStr = name.getString();
+                        if (!nameStr) {
+                            this.addChild(new MsgLayer("!请输入玩家名称"));
+                            return;
+                        }
+                        let scoreStr = Number(score.getString());
+                        if (!scoreStr) {
+                            this.addChild(new MsgLayer("!请输入正确的分数"));
+                            return;
+                        }
+                        this.playerData = {
+                            name: nameStr,
+                            score: scoreStr,
+                        };
+                        if (!this.data || "player" in this.data) this.data["player"] = {};
+                        this.data.player[nameStr] = scoreStr;
+                    }, this);
+
+                    //添加
+                    /**添加新玩家按钮 */
+                    right.getChildByName("add").addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        if (name.getString() !== "") name.setString("");
+                        if (score.getString() !== "0") score.setString("0");
+                        this.playerData = {
+                            "name": "",
+                            "score": 0,
+                        }
+                    }, this);
+
+                    /**@type {Boolean} 初始化完毕 */
+                    pan._init = true;
+                }
 
                 let tempData = this.playerData;
-                tempData = tempData ? tempData : {};
 
                 //玩家名称
-                /**@type {ccui.TextField} 玩家姓名ui */
-                let name = right.getChildByName("name");
                 /**@type {String} 玩家名称 */
                 let nameStr = tempData.name;
                 nameStr = nameStr ? nameStr : "";
+                /**@type {ccui.TextField} 玩家名称输入框 */
+                let name = pan._name;
                 if (name.getString() !== nameStr) name.setString(nameStr);
 
                 //分数
                 /**@type {ccui.TextField} */
-                let score = right.getChildByName("score");
+                let score = pan.score;
                 /**@type {String|Number} */
                 let scoreStr = tempData.score;
                 scoreStr = scoreStr ? scoreStr.toString() : "0";
                 if (score.getString() !== scoreStr) score.setString(scoreStr);
-
-                //保存ui
-                /**@type {ccui.Button} 添加按钮 */
-                let set = right.getChildByName("set");
-                set.addTouchEventListener(function (sender, type) {
-                    if (type !== 2) return;
-                    let nameStr = name.getString();
-                    if (!nameStr) {
-                        this.addChild(new MsgLayer("!请输入玩家名称"));
-                        return;
-                    }
-                    let scoreStr = score.getString();
-                    scoreStr = Number(scoreStr);
-                    if (!scoreStr) {
-                        this.addChild(new MsgLayer("!请输入正确的分数"));
-                        return;
-                    }
-                    this.playerData = {
-                        name: nameStr,
-                        score: scoreStr,
-                    };
-                    if (!this.data || "player" in this.data) this.data["player"] = {};
-                    this.data.player[nameStr] = scoreStr;
-                }, this);
-
-                //添加
-                /**@type {ccui.Button} 添加新玩家按钮 */
-                let add = right.getChildByName("add");
-                add.addTouchEventListener(function (sender, type) {
-                    if (type !== 2) return;
-                    if (name.getString() !== "") name.setString("");
-                    if (score.getString() !== "0") score.setString("0");
-                    this.playerData = {
-                        "name": "",
-                        "score": 0,
-                    }
-                }, this);
 
                 //左侧
                 /**@type {ccui.Layout|cc.Node} 左侧面板 */
