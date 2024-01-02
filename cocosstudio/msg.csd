@@ -9,15 +9,15 @@
           <AbstractNodeData Name="main" ActionTag="225143518" Tag="127" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="51" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="300.0000" Y="30.0000" />
             <Children>
-              <AbstractNodeData Name="bg" ActionTag="-1499737125" Alpha="103" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="55.0000" RightMargin="55.0000" TopMargin="-7.7000" BottomMargin="-11.3000" LeftEage="62" RightEage="62" TopEage="16" BottomEage="16" Scale9OriginX="62" Scale9OriginY="16" Scale9Width="66" Scale9Height="17" ctype="ImageViewObjectData">
-                <Size X="190.0000" Y="49.0000" />
+              <AbstractNodeData Name="bg" ActionTag="-1499737125" Alpha="103" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="50.0000" RightMargin="50.0000" TopMargin="-8.2000" BottomMargin="-11.8000" LeftEage="62" RightEage="62" TopEage="16" BottomEage="16" Scale9OriginX="62" Scale9OriginY="16" Scale9Width="76" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="200.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="150.0000" Y="13.2000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.4400" />
-                <PreSize X="0.6333" Y="1.6333" />
-                <FileData Type="Normal" Path="kenney_ui-pack/PNG/yellow_button13.png" Plist="" />
+                <PreSize X="0.6667" Y="1.6667" />
+                <FileData Type="Normal" Path="wt/other/GradTransBkgnd.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="text" ActionTag="-1839782438" Tag="129" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="60.0000" RightMargin="60.0000" IsCustomSize="True" FontSize="20" LabelText="消息文本" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="180.0000" Y="30.0000" />
