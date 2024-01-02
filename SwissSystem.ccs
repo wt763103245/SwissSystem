@@ -153,6 +153,11 @@
             <Image Name="yellow_tick.png" />
           </Folder>
         </Folder>
+        <Folder Name="wt">
+          <Folder Name="other">
+            <Image Name="GradTransBkgnd.png" />
+          </Folder>
+        </Folder>
         <Project Name="Create.csd" Type="Scene" />
         <Image Name="HelloWorld.png" />
         <Project Name="MainScene.csd" Type="Scene" />
