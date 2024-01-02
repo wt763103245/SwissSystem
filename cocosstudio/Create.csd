@@ -19,13 +19,13 @@
                 <PreSize X="1.0000" Y="1.0000" />
                 <FileData Type="Normal" Path="HelloWorld.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="exit" ActionTag="-1068230636" Tag="130" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="912.4000" RightMargin="9.6000" TopMargin="6.4000" BottomMargin="597.6000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="exit" ActionTag="-1068230636" Tag="130" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="767.9999" RightMargin="154.0001" TopMargin="117.6000" BottomMargin="486.4000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="8" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="38.0000" Y="36.0000" />
-                <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />
-                <Position X="950.4000" Y="633.6000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <AnchorPoint />
+                <Position X="767.9999" Y="486.4000" />
+                <Scale ScaleX="1.3500" ScaleY="1.3500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9900" Y="0.9900" />
+                <PrePosition X="0.8000" Y="0.7600" />
                 <PreSize X="0.0396" Y="0.0562" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -254,9 +254,19 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Center" ActionTag="-1799651484" Tag="47" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="201.6000" RightMargin="201.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="Center" ActionTag="-1799651484" Tag="47" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="201.6000" RightMargin="201.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="556.8000" Y="640.0000" />
                 <Children>
+                  <AbstractNodeData Name="bg" ActionTag="-2144919504" Tag="122" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="160.0000" BottomMargin="160.0000" Scale9Enable="True" LeftEage="33" RightEage="33" TopEage="33" BottomEage="33" Scale9OriginX="33" Scale9OriginY="33" Scale9Width="34" Scale9Height="34" ctype="ImageViewObjectData">
+                    <Size X="556.8000" Y="320.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="278.4000" Y="320.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="0.5000" />
+                    <FileData Type="Normal" Path="kenney_ui-pack/PNG/grey_panel.png" Plist="" />
+                  </AbstractNodeData>
                   <AbstractNodeData Name="pan0" ActionTag="-264383020" Tag="39" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="556.8000" Y="640.0000" />
                     <Children>
@@ -276,7 +286,7 @@
                         <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
                         <Position X="278.4000" Y="352.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
+                        <CColor A="255" R="26" G="26" B="26" />
                         <PrePosition X="0.5000" Y="0.5500" />
                         <PreSize X="0.1976" Y="0.0313" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
@@ -316,8 +326,8 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="but" ActionTag="-1316619107" Tag="131" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="222.7200" RightMargin="222.7200" TopMargin="333.9000" BottomMargin="257.1000" TouchEnable="True" FontSize="30" ButtonText="创建" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                        <Size X="111.3600" Y="49.0000" />
+                      <AbstractNodeData Name="but" ActionTag="-1316619107" Tag="131" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="222.7200" RightMargin="222.7200" TopMargin="333.8880" BottomMargin="257.0880" TouchEnable="True" FontSize="30" ButtonText="创建" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="111.3600" Y="49.0240" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="278.4000" Y="281.6000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />

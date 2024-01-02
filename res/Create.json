@@ -148,34 +148,31 @@
                 "ShadowOffsetX": 2.0,
                 "ShadowOffsetY": -2.0,
                 "TouchEnable": true,
-                "AnchorPoint": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
+                "AnchorPoint": {},
                 "Position": {
-                  "X": 950.4,
-                  "Y": 633.6
+                  "X": 767.9999,
+                  "Y": 486.4
                 },
                 "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
+                  "ScaleX": 1.35,
+                  "ScaleY": 1.35
                 },
                 "CColor": {},
                 "IconVisible": false,
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
                 "PrePosition": {
-                  "X": 0.99,
-                  "Y": 0.99
+                  "X": 0.8,
+                  "Y": 0.76
                 },
                 "PreSize": {
                   "X": 0.0396,
                   "Y": 0.0562
                 },
-                "LeftMargin": 912.4,
-                "RightMargin": 9.6,
-                "TopMargin": 6.4,
-                "BottomMargin": 597.6,
+                "LeftMargin": 767.9999,
+                "RightMargin": 154.0001,
+                "TopMargin": 117.6,
+                "BottomMargin": 486.4,
                 "Tag": 130,
                 "ActionTag": -1068230636,
                 "Size": {
@@ -1157,7 +1154,6 @@
               {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
-                "ComboBoxIndex": 1,
                 "SingleColor": {
                   "R": 26,
                   "G": 26,
@@ -1206,6 +1202,56 @@
                 "RightMargin": 201.6,
                 "Tag": 47,
                 "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "kenney_ui-pack/PNG/grey_panel.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 33,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 34,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 278.4,
+                      "Y": 320.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "PercentWidthEnable": true,
+                    "PercentHeightEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PercentHeightEnabled": true,
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.5
+                    },
+                    "TopMargin": 160.0,
+                    "BottomMargin": 160.0,
+                    "Tag": 122,
+                    "ActionTag": -2144919504,
+                    "Size": {
+                      "X": 556.8,
+                      "Y": 320.0
+                    },
+                    "Name": "bg",
+                    "ctype": "ImageViewObjectData"
+                  },
                   {
                     "ClipAble": false,
                     "BackColorAlpha": 102,
@@ -1336,7 +1382,11 @@
                           "ScaleX": 1.0,
                           "ScaleY": 1.0
                         },
-                        "CColor": {},
+                        "CColor": {
+                          "R": 26,
+                          "G": 26,
+                          "B": 26
+                        },
                         "IconVisible": false,
                         "PositionPercentXEnabled": true,
                         "PositionPercentYEnabled": true,
@@ -1582,13 +1632,13 @@
                         },
                         "LeftMargin": 222.72,
                         "RightMargin": 222.72,
-                        "TopMargin": 333.9,
-                        "BottomMargin": 257.1,
+                        "TopMargin": 333.888,
+                        "BottomMargin": 257.088,
                         "Tag": 131,
                         "ActionTag": -1316619107,
                         "Size": {
                           "X": 111.36,
-                          "Y": 49.0
+                          "Y": 49.024
                         },
                         "Name": "but",
                         "ctype": "ButtonObjectData"
@@ -5892,6 +5942,7 @@
         "kenney_ui-pack/PNG/blue_button13.png",
         "kenney_ui-pack/PNG/green_button00.png",
         "kenney_ui-pack/PNG/green_button01.png",
+        "kenney_ui-pack/PNG/grey_panel.png",
         "kenney_ui-pack/PNG/red_button10.png",
         "kenney_ui-pack/PNG/yellow_button01.png"
       ],
