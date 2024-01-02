@@ -29,7 +29,7 @@ let CreateLayer = cc.Layer.extend({
     leftList: [],
     /**@type {(cc.Node|ccui.Layout)[]} 中部显示内容选项 */
     centerList: [],
-    /**@type {{name: String, score: Number}} 当前修改玩家的数据 */
+    /**@type {{name: String, score: Number}} 当前修改玩家的数据，临时数据 */
     playerData: {
         /**@type {String} 名称 */
         name: "玩家1名称",
@@ -80,8 +80,20 @@ let CreateLayer = cc.Layer.extend({
 
         return true;
     },
-    initData: function(data) {
-        this.data = data ? data : {};
+    initData: function (data) {
+        this.data = data ? data : {
+            /**@type {String} 比赛名称 */
+            name: "比赛名称",
+            /**@type {{String: Number}} 玩家名称对应分数 */
+            player: {},
+            /**@type {[String, String, Number, Boolean][]} 对局数据，
+             * 外面大列表表示全部，里面表示每轮，第三位表示对局类型，
+             * 最后一位表示第1位玩家是否胜出，如果没有则表示该局未结束 */
+            game: [],
+            /**@type {Number[3]} 对局规则得分，
+             * 各位置，0表示胜场得分，1表示平场，2表示败场 */
+            type: [],
+        };
         this.playerData = {};
     },
     /**初始化ui
@@ -109,22 +121,42 @@ let CreateLayer = cc.Layer.extend({
         let center = main.getChildByName("Center");
         let funcList = [
             function (pan) {
-                /**@type {ccui.TextField|cc.Node} 比赛名称 */
-                let gameName = pan.getChildByName("gameName");
+                /**相关数据 */
                 let data = this.data;
+                if (!pan._init) {
+                    /**@type {ccui.TextField|cc.Node} 比赛名称文本输入框 */
+                    pan._gameName = pan.getChildByName("pan_textField").getChildByName("gameName");
+
+                    /**@type {ccui.Button|cc.Node} 创建按钮 */
+                    let but = pan.getChildByName("but");
+                    pan._but = but;
+                    but.addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        let gameNameText = gameName.getString();
+                        if (gameNameText) {
+                            let oldGameName = data.name;
+                            if (oldGameName !== gameNameText) {
+                                this.data.name = gameNameText;
+                            }
+                        }
+                    }, this);
+
+                    /**@type {Boolean} 是否已经初始化 */
+                    pan._init = true;
+                }
+                /**@type {ccui.TextField} 比赛名称 */
+                let gameName = pan._gameName;
                 /**@type {String} 获得当前比赛的名称 */
-                let gameNameText = ("name" in data) ? data.name : "";
+                let gameNameText = data.name;
                 //初始化清空
                 if (gameName.getString() !== gameNameText) gameName.setString(gameNameText);
-                pan._gameName = gameName;
 
-                /**@type {ccui.Button|cc.Node} 创建按钮 */
-                let but = pan.getChildByName("but");
+                /**@type {ccui.Button} 创建按钮 */
+                let but = pan._but;
                 /**@type {String} 按钮文本 */
                 let butText = !gameNameText ? "创建" : "修改";
                 //设置对应文本
                 if (but.getTitleText() !== butText) but.setTitleText(butText);
-                pan._but = but;
             },
             /**玩家信息面板
              * @param {ccui.Layout|cc.Node} pan 玩家信息面板
