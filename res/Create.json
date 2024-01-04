@@ -110,79 +110,6 @@
                 "ctype": "ImageViewObjectData"
               },
               {
-                "FontSize": 14,
-                "ButtonText": "",
-                "TextColor": {
-                  "R": 65,
-                  "G": 65,
-                  "B": 70
-                },
-                "DisabledFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Disable.png",
-                  "Plist": ""
-                },
-                "PressedFileData": {
-                  "Type": "Default",
-                  "Path": "Default/Button_Press.png",
-                  "Plist": ""
-                },
-                "NormalFileData": {
-                  "Type": "Normal",
-                  "Path": "kenney_ui-pack/PNG/blue_boxCross.png",
-                  "Plist": ""
-                },
-                "Scale9OriginX": 15,
-                "Scale9OriginY": 11,
-                "Scale9Width": 8,
-                "Scale9Height": 14,
-                "OutlineColor": {
-                  "G": 0,
-                  "B": 0
-                },
-                "ShadowColor": {
-                  "R": 110,
-                  "G": 110,
-                  "B": 110
-                },
-                "ShadowOffsetX": 2.0,
-                "ShadowOffsetY": -2.0,
-                "TouchEnable": true,
-                "AnchorPoint": {},
-                "Position": {
-                  "X": 767.9999,
-                  "Y": 486.4
-                },
-                "Scale": {
-                  "ScaleX": 1.35,
-                  "ScaleY": 1.35
-                },
-                "CColor": {},
-                "IconVisible": false,
-                "PositionPercentXEnabled": true,
-                "PositionPercentYEnabled": true,
-                "PrePosition": {
-                  "X": 0.8,
-                  "Y": 0.76
-                },
-                "PreSize": {
-                  "X": 0.0396,
-                  "Y": 0.0562
-                },
-                "LeftMargin": 767.9999,
-                "RightMargin": 154.0001,
-                "TopMargin": 117.6,
-                "BottomMargin": 486.4,
-                "Tag": 130,
-                "ActionTag": -1068230636,
-                "Size": {
-                  "X": 38.0,
-                  "Y": 36.0
-                },
-                "Name": "exit",
-                "ctype": "ButtonObjectData"
-              },
-              {
                 "ClipAble": false,
                 "BackColorAlpha": 102,
                 "SingleColor": {
@@ -1205,6 +1132,56 @@
                   {
                     "FileData": {
                       "Type": "Normal",
+                      "Path": "kenney_ui-pack/PNG/blue_panel.png",
+                      "Plist": ""
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 33,
+                    "Scale9OriginY": 33,
+                    "Scale9Width": 34,
+                    "Scale9Height": 34,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 278.4,
+                      "Y": 531.2
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.83
+                    },
+                    "PercentWidthEnable": true,
+                    "PercentHeightEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PercentHeightEnabled": true,
+                    "PreSize": {
+                      "X": 1.0,
+                      "Y": 0.5
+                    },
+                    "TopMargin": 108.8,
+                    "BottomMargin": 211.2,
+                    "Tag": 126,
+                    "ActionTag": -173988571,
+                    "Size": {
+                      "X": 556.8,
+                      "Y": 320.0
+                    },
+                    "Name": "bg0",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
                       "Path": "kenney_ui-pack/PNG/grey_panel.png",
                       "Plist": ""
                     },
@@ -1249,7 +1226,7 @@
                       "X": 556.8,
                       "Y": 320.0
                     },
-                    "Name": "bg",
+                    "Name": "bg1",
                     "ctype": "ImageViewObjectData"
                   },
                   {
@@ -1301,7 +1278,7 @@
                     "Tag": 39,
                     "Children": [
                       {
-                        "FontSize": 20,
+                        "FontSize": 30,
                         "LabelText": "创建",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
@@ -1322,7 +1299,7 @@
                         },
                         "Position": {
                           "X": 278.4,
-                          "Y": 403.2
+                          "Y": 505.6
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1334,23 +1311,22 @@
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
                           "X": 0.5,
-                          "Y": 0.63
+                          "Y": 0.79
                         },
                         "PreSize": {
-                          "X": 0.0718,
-                          "Y": 0.0312
+                          "X": 0.1078,
+                          "Y": 0.0469
                         },
-                        "LeftMargin": 258.4,
-                        "RightMargin": 258.4,
-                        "TopMargin": 226.8,
-                        "BottomMargin": 393.2,
+                        "LeftMargin": 248.4,
+                        "RightMargin": 248.4,
+                        "TopMargin": 119.4,
+                        "BottomMargin": 490.6,
                         "Tag": 44,
                         "ActionTag": 1289973333,
                         "Size": {
-                          "X": 40.0,
-                          "Y": 20.0
+                          "X": 60.0,
+                          "Y": 30.0
                         },
-                        "VisibleForFrame": false,
                         "Name": "title",
                         "ctype": "TextObjectData"
                       },
@@ -1426,6 +1402,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleY": 0.5
@@ -1545,6 +1523,7 @@
                               "X": 1.0,
                               "Y": 1.0
                             },
+                            "TopMargin": 0.0,
                             "Tag": 38,
                             "ActionTag": -1281475856,
                             "Size": {
@@ -1566,11 +1545,7 @@
                       {
                         "FontSize": 30,
                         "ButtonText": "创建",
-                        "TextColor": {
-                          "R": 65,
-                          "G": 65,
-                          "B": 70
-                        },
+                        "TextColor": {},
                         "DisabledFileData": {
                           "Type": "Normal",
                           "Path": "kenney_ui-pack/PNG/red_button10.png",
@@ -1586,6 +1561,7 @@
                           "Path": "kenney_ui-pack/PNG/blue_button00.png",
                           "Plist": ""
                         },
+                        "Scale9Enable": true,
                         "Scale9OriginX": 15,
                         "Scale9OriginY": 11,
                         "Scale9Width": 160,
@@ -1701,7 +1677,7 @@
                     "Tag": 40,
                     "Children": [
                       {
-                        "FontSize": 20,
+                        "FontSize": 30,
                         "LabelText": "玩家",
                         "HorizontalAlignmentType": "HT_Center",
                         "VerticalAlignmentType": "VT_Center",
@@ -1722,7 +1698,7 @@
                         },
                         "Position": {
                           "X": 278.4,
-                          "Y": 512.0
+                          "Y": 505.6
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -1734,21 +1710,21 @@
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
                           "X": 0.5,
-                          "Y": 0.8
+                          "Y": 0.79
                         },
                         "PreSize": {
-                          "X": 0.0718,
-                          "Y": 0.0312
+                          "X": 0.1078,
+                          "Y": 0.0469
                         },
-                        "LeftMargin": 258.4,
-                        "RightMargin": 258.4,
-                        "TopMargin": 118.0,
-                        "BottomMargin": 502.0,
+                        "LeftMargin": 248.4,
+                        "RightMargin": 248.4,
+                        "TopMargin": 119.4,
+                        "BottomMargin": 490.6,
                         "Tag": 45,
                         "ActionTag": 359069271,
                         "Size": {
-                          "X": 40.0,
-                          "Y": 20.0
+                          "X": 60.0,
+                          "Y": 30.0
                         },
                         "Name": "title",
                         "ctype": "TextObjectData"
@@ -1915,7 +1891,7 @@
                             "Children": [
                               {
                                 "FontSize": 30,
-                                "ButtonText": "Button",
+                                "ButtonText": "玩家名称",
                                 "TextColor": {
                                   "R": 65,
                                   "G": 65,
@@ -2871,11 +2847,12 @@
                         "ShadowOffsetX": 2.0,
                         "ShadowOffsetY": -2.0,
                         "AnchorPoint": {
-                          "ScaleX": 0.5
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
                         },
                         "Position": {
                           "X": 278.4,
-                          "Y": 499.2
+                          "Y": 505.6
                         },
                         "Scale": {
                           "ScaleX": 1.0,
@@ -2887,7 +2864,7 @@
                         "PositionPercentYEnabled": true,
                         "PrePosition": {
                           "X": 0.5,
-                          "Y": 0.78
+                          "Y": 0.79
                         },
                         "PreSize": {
                           "X": 0.1347,
@@ -2895,8 +2872,8 @@
                         },
                         "LeftMargin": 240.9,
                         "RightMargin": 240.9,
-                        "TopMargin": 110.8,
-                        "BottomMargin": 499.2,
+                        "TopMargin": 119.4,
+                        "BottomMargin": 490.6,
                         "Tag": 94,
                         "ActionTag": -496577218,
                         "Size": {
@@ -3083,15 +3060,14 @@
                                   "Plist": ""
                                 },
                                 "NormalFileData": {
-                                  "Type": "Default",
-                                  "Path": "Default/Button_Normal.png",
+                                  "Type": "Normal",
+                                  "Path": "kenney_ui-pack/PNG/grey_button00.png",
                                   "Plist": ""
                                 },
-                                "Scale9Enable": true,
                                 "Scale9OriginX": 15,
                                 "Scale9OriginY": 11,
-                                "Scale9Width": 16,
-                                "Scale9Height": 14,
+                                "Scale9Width": 160,
+                                "Scale9Height": 23,
                                 "OutlineColor": {
                                   "G": 0,
                                   "B": 0
@@ -3105,11 +3081,10 @@
                                 "ShadowOffsetY": -2.0,
                                 "TouchEnable": true,
                                 "AnchorPoint": {
-                                  "ScaleX": 0.5,
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 139.2,
+                                  "X": 13.92,
                                   "Y": 32.0
                                 },
                                 "Scale": {
@@ -3121,7 +3096,7 @@
                                 "PositionPercentXEnabled": true,
                                 "PositionPercentYEnabled": true,
                                 "PrePosition": {
-                                  "X": 0.5,
+                                  "X": 0.05,
                                   "Y": 0.5
                                 },
                                 "PercentWidthEnable": true,
@@ -3129,17 +3104,95 @@
                                 "PercentWidthEnabled": true,
                                 "PercentHeightEnabled": true,
                                 "PreSize": {
-                                  "X": 0.95,
+                                  "X": 0.9,
                                   "Y": 0.95
                                 },
-                                "LeftMargin": 6.96,
-                                "RightMargin": 6.96,
+                                "LeftMargin": 13.92,
+                                "RightMargin": 13.92,
                                 "TopMargin": 1.6,
                                 "BottomMargin": 1.6,
                                 "Tag": 99,
+                                "Children": [
+                                  {
+                                    "FontSize": 14,
+                                    "ButtonText": "",
+                                    "TextColor": {
+                                      "R": 65,
+                                      "G": 65,
+                                      "B": 70
+                                    },
+                                    "DisabledFileData": {
+                                      "Type": "Normal",
+                                      "Path": "kenney_ui-pack/PNG/grey_crossGrey.png",
+                                      "Plist": ""
+                                    },
+                                    "PressedFileData": {
+                                      "Type": "Normal",
+                                      "Path": "kenney_ui-pack/PNG/yellow_cross.png",
+                                      "Plist": ""
+                                    },
+                                    "NormalFileData": {
+                                      "Type": "Normal",
+                                      "Path": "kenney_ui-pack/PNG/red_cross.png",
+                                      "Plist": ""
+                                    },
+                                    "Scale9OriginX": 5,
+                                    "Scale9OriginY": 5,
+                                    "Scale9Width": 8,
+                                    "Scale9Height": 8,
+                                    "OutlineColor": {
+                                      "G": 0,
+                                      "B": 0
+                                    },
+                                    "ShadowColor": {
+                                      "R": 110,
+                                      "G": 110,
+                                      "B": 110
+                                    },
+                                    "ShadowOffsetX": 2.0,
+                                    "ShadowOffsetY": -2.0,
+                                    "TouchEnable": true,
+                                    "AnchorPoint": {
+                                      "ScaleX": 1.0,
+                                      "ScaleY": 0.5
+                                    },
+                                    "Position": {
+                                      "X": 245.5488,
+                                      "Y": 30.4
+                                    },
+                                    "Scale": {
+                                      "ScaleX": 2.0,
+                                      "ScaleY": 2.0
+                                    },
+                                    "CColor": {},
+                                    "IconVisible": false,
+                                    "PositionPercentXEnabled": true,
+                                    "PositionPercentYEnabled": true,
+                                    "PrePosition": {
+                                      "X": 0.98,
+                                      "Y": 0.5
+                                    },
+                                    "PreSize": {
+                                      "X": 0.0718,
+                                      "Y": 0.2961
+                                    },
+                                    "LeftMargin": 227.5488,
+                                    "RightMargin": 5.0112,
+                                    "TopMargin": 21.4,
+                                    "BottomMargin": 21.4,
+                                    "Tag": 123,
+                                    "ActionTag": -304378419,
+                                    "Size": {
+                                      "X": 18.0,
+                                      "Y": 18.0
+                                    },
+                                    "Name": "del",
+                                    "ctype": "ButtonObjectData"
+                                  }
+                                ],
                                 "ActionTag": -318836084,
                                 "Size": {
-                                  "X": 264.48,
+                                  "X": 250.56,
                                   "Y": 60.8
                                 },
                                 "Name": "but",
@@ -3166,7 +3219,6 @@
                       {
                         "ClipAble": false,
                         "BackColorAlpha": 102,
-                        "ComboBoxIndex": 1,
                         "SingleColor": {
                           "R": 150,
                           "G": 200
@@ -3215,6 +3267,59 @@
                         "Tag": 101,
                         "Children": [
                           {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/grey_panel.png",
+                              "Plist": ""
+                            },
+                            "Scale9Enable": true,
+                            "Scale9OriginX": 33,
+                            "Scale9OriginY": 33,
+                            "Scale9Width": 34,
+                            "Scale9Height": 34,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 139.2,
+                              "Y": 160.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PercentWidthEnable": true,
+                            "PercentHeightEnable": true,
+                            "PercentWidthEnabled": true,
+                            "PercentHeightEnabled": true,
+                            "PreSize": {
+                              "X": 0.95,
+                              "Y": 0.95
+                            },
+                            "LeftMargin": 6.96,
+                            "RightMargin": 6.96,
+                            "TopMargin": 8.0,
+                            "BottomMargin": 8.0,
+                            "Tag": 124,
+                            "ActionTag": 582787781,
+                            "Size": {
+                              "X": 264.48,
+                              "Y": 304.0
+                            },
+                            "VisibleForFrame": false,
+                            "Name": "bg",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
                             "FontSize": 20,
                             "LabelText": "胜 场： ",
                             "HorizontalAlignmentType": "HT_Right",
@@ -3242,7 +3347,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3285,7 +3394,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3309,7 +3422,7 @@
                               "X": 133.632,
                               "Y": 20.0
                             },
-                            "Name": "name_0",
+                            "Name": "score0",
                             "ctype": "TextFieldObjectData"
                           },
                           {
@@ -3340,7 +3453,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3383,7 +3500,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3407,7 +3528,7 @@
                               "X": 133.632,
                               "Y": 20.0
                             },
-                            "Name": "name",
+                            "Name": "score1",
                             "ctype": "TextFieldObjectData"
                           },
                           {
@@ -3438,7 +3559,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3481,7 +3606,11 @@
                               "ScaleX": 1.0,
                               "ScaleY": 1.0
                             },
-                            "CColor": {},
+                            "CColor": {
+                              "R": 151,
+                              "G": 149,
+                              "B": 149
+                            },
                             "IconVisible": false,
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
@@ -3505,37 +3634,33 @@
                               "X": 133.632,
                               "Y": 20.0
                             },
-                            "Name": "score",
+                            "Name": "score3",
                             "ctype": "TextFieldObjectData"
                           },
                           {
                             "FontSize": 14,
                             "ButtonText": "添加规则",
-                            "TextColor": {
-                              "R": 65,
-                              "G": 65,
-                              "B": 70
-                            },
+                            "TextColor": {},
                             "DisabledFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Disable.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/red_button10.png",
                               "Plist": ""
                             },
                             "PressedFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Press.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/yellow_button01.png",
                               "Plist": ""
                             },
                             "NormalFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Normal.png",
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button00.png",
                               "Plist": ""
                             },
                             "Scale9Enable": true,
-                            "Scale9OriginX": 15,
-                            "Scale9OriginY": 11,
-                            "Scale9Width": 16,
-                            "Scale9Height": 14,
+                            "Scale9OriginX": 6,
+                            "Scale9OriginY": 6,
+                            "Scale9Width": 178,
+                            "Scale9Height": 37,
                             "OutlineColor": {
                               "G": 0,
                               "B": 0
@@ -3586,142 +3711,6 @@
                             },
                             "Name": "add",
                             "ctype": "ButtonObjectData"
-                          },
-                          {
-                            "FontSize": 14,
-                            "ButtonText": "移除玩家",
-                            "TextColor": {
-                              "R": 65,
-                              "G": 65,
-                              "B": 70
-                            },
-                            "DisabledFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Disable.png",
-                              "Plist": ""
-                            },
-                            "PressedFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Press.png",
-                              "Plist": ""
-                            },
-                            "NormalFileData": {
-                              "Type": "Default",
-                              "Path": "Default/Button_Normal.png",
-                              "Plist": ""
-                            },
-                            "Scale9Enable": true,
-                            "Scale9OriginX": 15,
-                            "Scale9OriginY": 11,
-                            "Scale9Width": 16,
-                            "Scale9Height": 14,
-                            "OutlineColor": {
-                              "G": 0,
-                              "B": 0
-                            },
-                            "ShadowColor": {
-                              "R": 110,
-                              "G": 110,
-                              "B": 110
-                            },
-                            "ShadowOffsetX": 2.0,
-                            "ShadowOffsetY": -2.0,
-                            "TouchEnable": true,
-                            "AnchorPoint": {
-                              "ScaleX": 0.5,
-                              "ScaleY": 1.0
-                            },
-                            "Position": {
-                              "X": 139.2,
-                              "Y": 96.0
-                            },
-                            "Scale": {
-                              "ScaleX": 1.0,
-                              "ScaleY": 1.0
-                            },
-                            "CColor": {},
-                            "IconVisible": false,
-                            "PositionPercentXEnabled": true,
-                            "PositionPercentYEnabled": true,
-                            "PrePosition": {
-                              "X": 0.5,
-                              "Y": 0.3
-                            },
-                            "PercentWidthEnable": true,
-                            "PercentWidthEnabled": true,
-                            "PreSize": {
-                              "X": 0.3,
-                              "Y": 0.1125
-                            },
-                            "LeftMargin": 97.44,
-                            "RightMargin": 97.44,
-                            "TopMargin": 224.0,
-                            "BottomMargin": 60.0,
-                            "Tag": 109,
-                            "Children": [
-                              {
-                                "FontSize": 14,
-                                "LabelText": "移除玩家操作不可逆",
-                                "OutlineColor": {
-                                  "G": 0,
-                                  "B": 0
-                                },
-                                "ShadowColor": {
-                                  "R": 110,
-                                  "G": 110,
-                                  "B": 110
-                                },
-                                "ShadowOffsetX": 2.0,
-                                "ShadowOffsetY": -2.0,
-                                "AnchorPoint": {
-                                  "ScaleX": 0.5,
-                                  "ScaleY": 1.0
-                                },
-                                "Position": {
-                                  "X": 41.76,
-                                  "Y": -3.6
-                                },
-                                "Scale": {
-                                  "ScaleX": 1.0,
-                                  "ScaleY": 1.0
-                                },
-                                "CColor": {
-                                  "G": 0,
-                                  "B": 0
-                                },
-                                "IconVisible": false,
-                                "PositionPercentXEnabled": true,
-                                "PositionPercentYEnabled": true,
-                                "PrePosition": {
-                                  "X": 0.5,
-                                  "Y": -0.1
-                                },
-                                "PreSize": {
-                                  "X": 1.5086,
-                                  "Y": 0.3889
-                                },
-                                "LeftMargin": -21.24,
-                                "RightMargin": -21.24,
-                                "TopMargin": 39.6,
-                                "BottomMargin": -17.6,
-                                "Tag": 110,
-                                "ActionTag": 803965511,
-                                "Size": {
-                                  "X": 126.0,
-                                  "Y": 14.0
-                                },
-                                "Name": "tip",
-                                "ctype": "TextObjectData"
-                              }
-                            ],
-                            "ActionTag": 1480264847,
-                            "Size": {
-                              "X": 83.52,
-                              "Y": 36.0
-                            },
-                            "VisibleForFrame": false,
-                            "Name": "del",
-                            "ctype": "ButtonObjectData"
                           }
                         ],
                         "ActionTag": -626890254,
@@ -3738,7 +3727,6 @@
                       "X": 556.8,
                       "Y": 640.0
                     },
-                    "VisibleForFrame": false,
                     "Name": "pan2",
                     "ctype": "PanelObjectData"
                   },
@@ -5939,6 +5927,121 @@
                 },
                 "Name": "Center",
                 "ctype": "PanelObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "kenney_ui-pack/PNG/red_circle.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 6,
+                "Scale9Height": 14,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 758.4,
+                  "Y": 531.2
+                },
+                "Scale": {
+                  "ScaleX": 0.95,
+                  "ScaleY": 0.95
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PositionPercentXEnabled": true,
+                "PositionPercentYEnabled": true,
+                "PrePosition": {
+                  "X": 0.79,
+                  "Y": 0.83
+                },
+                "PreSize": {
+                  "X": 0.0375,
+                  "Y": 0.0562
+                },
+                "LeftMargin": 740.4,
+                "RightMargin": 183.6,
+                "TopMargin": 90.8,
+                "BottomMargin": 513.2,
+                "Tag": 130,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "kenney_ui-pack/PNG/grey_crossWhite.png",
+                      "Plist": ""
+                    },
+                    "Scale9OriginX": 5,
+                    "Scale9OriginY": 5,
+                    "Scale9Width": 8,
+                    "Scale9Height": 8,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 18.0,
+                      "Y": 18.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "PreSize": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "LeftMargin": 9.0,
+                    "RightMargin": 9.0,
+                    "TopMargin": 9.0,
+                    "BottomMargin": 9.0,
+                    "Tag": 125,
+                    "ActionTag": 295764189,
+                    "Size": {
+                      "X": 18.0,
+                      "Y": 18.0
+                    },
+                    "Name": "bg",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1068230636,
+                "Size": {
+                  "X": 36.0,
+                  "Y": 36.0
+                },
+                "Name": "exit",
+                "ctype": "ButtonObjectData"
               }
             ],
             "ActionTag": 474472216,
@@ -5963,16 +6066,21 @@
         "Default/Button_Press.png",
         "Default/ImageFile.png",
         "HelloWorld.png",
-        "kenney_ui-pack/PNG/blue_boxCross.png",
         "kenney_ui-pack/PNG/blue_button00.png",
         "kenney_ui-pack/PNG/blue_button01.png",
         "kenney_ui-pack/PNG/blue_button13.png",
+        "kenney_ui-pack/PNG/blue_panel.png",
         "kenney_ui-pack/PNG/green_button00.png",
         "kenney_ui-pack/PNG/green_button01.png",
         "kenney_ui-pack/PNG/grey_button00.png",
+        "kenney_ui-pack/PNG/grey_crossGrey.png",
+        "kenney_ui-pack/PNG/grey_crossWhite.png",
         "kenney_ui-pack/PNG/grey_panel.png",
         "kenney_ui-pack/PNG/red_button10.png",
-        "kenney_ui-pack/PNG/yellow_button01.png"
+        "kenney_ui-pack/PNG/red_circle.png",
+        "kenney_ui-pack/PNG/red_cross.png",
+        "kenney_ui-pack/PNG/yellow_button01.png",
+        "kenney_ui-pack/PNG/yellow_cross.png"
       ],
       "ctype": "GameFileData"
     }
