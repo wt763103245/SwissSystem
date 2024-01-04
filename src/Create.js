@@ -119,7 +119,11 @@ let CreateLayer = cc.Layer.extend({
     initUi_Center: function (main) {
         /**@type {ccui.Layout|cc.Node} 中部容器 */
         let center = main.getChildByName("Center");
+        /**@type {Function[]} 各面板初始化方法 */
         let funcList = [
+            /**比赛名称面板
+             * @param pan 比赛名称面板
+             */
             function (pan) {
                 /**相关数据 */
                 let data = this.data;
@@ -166,9 +170,8 @@ let CreateLayer = cc.Layer.extend({
                     //右侧ui
                     /**@type {ccui.Layout|cc.Node} 右侧面板 */
                     let right = pan.getChildByName("right");
-                    let text0 = right.getChildByName("text0");
-                    let id = right.getChildByName("id");
-                    for (let _node of [text0, id]) _node.setVisible(false);
+                    pan._text0 = right.getChildByName("text0");
+                    pan._id = right.getChildByName("id");
 
                     //玩家名称
                     /**@type {ccui.TextField} 玩家姓名文本输入框 */
@@ -178,7 +181,7 @@ let CreateLayer = cc.Layer.extend({
                     //分数
                     /**@type {ccui.TextField} 分数文本输入框 */
                     let score = right.getChildByName("score");
-                    pan.score = score;
+                    pan._score = score;
 
                     //保存ui
                     /**添加按钮 */
@@ -198,7 +201,7 @@ let CreateLayer = cc.Layer.extend({
                             name: nameStr,
                             score: scoreStr,
                         };
-                        if (!this.data || "player" in this.data) this.data["player"] = {};
+                        if ("player" in this.data) this.data["player"] = {};
                         this.data.player[nameStr] = scoreStr;
                     }, this);
 
@@ -214,9 +217,26 @@ let CreateLayer = cc.Layer.extend({
                         }
                     }, this);
 
+                    //左侧
+                    /**@type {ccui.Layout|cc.Node} 左侧面板 */
+                    let left = pan.getChildByName("left");
+                    /**@type {ccui.ListView|cc.Node} 玩家列表容器 */
+                    let list = left.getChildByName("playerList");
+                    /**@type {ccui.Layout|cc.Node} 玩家信息容器示例 */
+                    list._item = left.getChildByName("item");
+                    pan._list = list;
+
                     /**@type {Boolean} 初始化完毕 */
                     pan._init = true;
                 }
+
+                //编号
+                // let text0 = pan._text0;
+                let id = pan._id;
+                // //test显示看看
+                // for (let _node of [text0, id]) _node.setVisible(false);
+                let _tempNum = "";
+                if (id.getString() !== _tempNum) id.setString(_tempNum);
 
                 let tempData = this.playerData;
 
@@ -230,21 +250,19 @@ let CreateLayer = cc.Layer.extend({
 
                 //分数
                 /**@type {ccui.TextField} */
-                let score = pan.score;
+                let score = pan._score;
                 /**@type {String|Number} */
                 let scoreStr = tempData.score;
                 scoreStr = scoreStr ? scoreStr.toString() : "0";
                 if (score.getString() !== scoreStr) score.setString(scoreStr);
 
                 //左侧
-                /**@type {ccui.Layout|cc.Node} 左侧面板 */
-                let left = pan.getChildByName("left");
                 /**@type {ccui.ListView|cc.Node} 玩家列表容器 */
-                let playerList = left.getChildByName("playerList");
-                pan._list = playerList;
+                let playerList = pan._list;
+                //清空之前的item
+                if (playerList._list) playerList.removeAllChildren();
                 /**@type {ccui.Layout|cc.Node} 玩家信息容器示例 */
-                let item = left.getChildByName("item");
-                playerList._item = item;
+                let item = playerList._item;
                 /**@type {(ccui.Layout|cc.Node)[]} 玩家列表内容 */
                 let playerListData = [];
                 /**@type {{String: Number}} 玩家名称对应分数 */
@@ -255,33 +273,69 @@ let CreateLayer = cc.Layer.extend({
                 if (playerCount) {
                     //开始显示这个示例
                     item.setVisible(true);
+                    let _index = 0;
                     //创建全部数据
                     for (let [playerName, playerScore] of Object.entries(playerData)) {
+                        /**@type {String} 分数 */
+                        playerScore = playerScore.toString();
+                        /**@type {String} 编号 */
+                        let _indexStr = _index.toString();
+
                         /**@type {ccui.Layout|cc.Node} 玩家信息容器 */
                         let _item = item.clone();
 
-                        /**@type {ccui.Text|cc.Node} 玩家编号 */
+                        //编号 按钮左侧
+                        /**@type {ccui.Text} 玩家编号 */
                         let _id = _item.getChildByName("id");
+                        // //test暂时隐藏
+                        // _id.setVisible(false);
+                        _id.setString(_indexStr);
                         _item._id = _id;
-                        //test暂时隐藏
-                        _id.setVisible(false);
 
+                        //按钮
                         /**@type {ccui.Button} 玩家信息交互按钮 */
                         let but = _item.getChildByName("but");
-                        _item._but = but;
+                        /**点击玩家按钮显示的相关数据 */
+                        but._data = {
+                            /**@type {String} 编号 */
+                            num: _indexStr,
+                            /**@type {String} 名称 */
+                            name: playerName,
+                            /**@type {String} 分数 */
+                            score: playerScore,
+                        };
                         but.addTouchEventListener(function (sender, type) {
                             if (type !== 2) return;
-                            //todo 改变右侧面板ui显示内容
-                        }, this);
-                        if (but.getTitleText() !== playerName) but.setTitleText(playerName);
 
-                        /**@type {ccui.Text} 玩家分数显示文本 */
-                        let score = _item.getChildByName("score");
-                        playerScore = playerScore.toString();
-                        if (score.getString() !== playerScore) score.setString(playerScore);
+                            /**@type {but._data|{num: String, name: String, score: String}} */
+                            let data = sender._data;
+
+                            //编号
+                            if (id.isVisible()) {
+                                let _num = data.num;
+                                if (id.getString() !== _num) id.setString(_num);
+                            }
+
+                            //姓名
+                            let _nameStr = data.name;
+                            if (name.getString() !== _nameStr) name.setString(_nameStr);
+
+                            //分数
+                            let _scoreStr = data.score;
+                            if (score.getString() !== _scoreStr) score.setString(_scoreStr);
+                        }, this);
+                        //按钮文本
+                        if (but.getTitleText() !== playerName) but.setTitleText(playerName);
+                        _item._but = but;
+
+                        //分数 按钮右侧
+                        let _score = _item.getChildByName("score")
+                        _score.setString(playerScore);
+                        _item._score = _score;
 
                         //保存到缓存中
                         playerListData.push(_item);
+                        _index++;
                     }
                 }
                 //隐藏示例
@@ -289,6 +343,17 @@ let CreateLayer = cc.Layer.extend({
                 playerList._list = playerListData;
             },
             //todo: 面板2/3/4
+            /**规则添加面板
+             * @param pan 规则添加面板
+             */
+            function (pan) {
+                //初始化
+                if (!pan._init) {
+                    //todo: 规则内容设置右侧
+                    // score
+                }
+                //刷新
+            },
         ];
         //循环所有的内容面板
         for (let i = 0; i < center.getChildrenCount(); i++) {
