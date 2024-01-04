@@ -589,7 +589,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="pan2" Visible="False" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="pan2" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="556.8000" Y="640.0000" />
                     <Children>
                       <AbstractNodeData Name="title" ActionTag="-496577218" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="240.9000" RightMargin="240.9000" TopMargin="119.4000" BottomMargin="490.6000" FontSize="30" LabelText="规 则" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -681,16 +681,6 @@
                       <AbstractNodeData Name="right" ActionTag="-626890254" Tag="101" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="278.4000" TopMargin="160.0000" BottomMargin="160.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="278.4000" Y="320.0000" />
                         <Children>
-                          <AbstractNodeData Name="bg" Visible="False" ActionTag="582787781" VisibleForFrame="False" Tag="124" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="6.9600" RightMargin="6.9600" TopMargin="8.0000" BottomMargin="8.0000" Scale9Enable="True" LeftEage="33" RightEage="33" TopEage="33" BottomEage="33" Scale9OriginX="33" Scale9OriginY="33" Scale9Width="34" Scale9Height="34" ctype="ImageViewObjectData">
-                            <Size X="264.4800" Y="304.0000" />
-                            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                            <Position X="139.2000" Y="160.0000" />
-                            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
-                            <PrePosition X="0.5000" Y="0.5000" />
-                            <PreSize X="0.9500" Y="0.9500" />
-                            <FileData Type="Normal" Path="kenney_ui-pack/PNG/grey_panel.png" Plist="" />
-                          </AbstractNodeData>
                           <AbstractNodeData Name="text0" ActionTag="1247182960" Tag="102" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="59.2000" RightMargin="139.2000" TopMargin="16.0000" BottomMargin="284.0000" FontSize="20" LabelText="胜 场： " HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                             <Size X="80.0000" Y="20.0000" />
                             <AnchorPoint ScaleX="1.0000" ScaleY="1.0000" />

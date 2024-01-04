@@ -4,12 +4,12 @@ let CreateLayer = cc.Layer.extend({
     data: {
         /**@type {String} 比赛名称 */
         name: "比赛名称",
-        /**@type {{String: Number}} 玩家名称对应分数 */
+        /**@type {String: Number} 玩家名称对应分数 */
         player: {
             "玩家1名称": 0,
             "玩家2名称": 1,
         },
-        /**@type {[String, String, Number, Boolean][]} 对局数据，
+        /**@type {([String, String, Number, Boolean])[]} 对局数据，
          * 外面大列表表示全部，里面表示每轮，第三位表示对局类型，
          * 最后一位表示第1位玩家是否胜出，如果没有则表示该局未结束 */
         game: [
@@ -18,7 +18,7 @@ let CreateLayer = cc.Layer.extend({
                 ["玩家2名称", "玩家1名称", 1],
             ],
         ],
-        /**@type {Number[3]} 对局规则得分，
+        /**@type {Number[][]} 对局规则得分，
          * 各位置，0表示胜场得分，1表示平场，2表示败场 */
         type: [
             [3, 1, 0],
@@ -36,6 +36,8 @@ let CreateLayer = cc.Layer.extend({
         /**@type {Number} 分数 */
         score: 0,
     },
+    /**@type {Number[]} 对局规则 */
+    gameDate: [1, 0, -1],
     /**创建方法
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
@@ -193,7 +195,7 @@ let CreateLayer = cc.Layer.extend({
                             return;
                         }
                         let scoreStr = Number(score.getString());
-                        if (!scoreStr) {
+                        if (!scoreStr || scoreStr !== 0) {
                             this.addChild(new MsgLayer("!请输入正确的分数"));
                             return;
                         }
@@ -260,7 +262,7 @@ let CreateLayer = cc.Layer.extend({
                 /**@type {ccui.ListView|cc.Node} 玩家列表容器 */
                 let playerList = pan._list;
                 //清空之前的item
-                if (playerList._list) playerList.removeAllChildren();
+                playerList.removeAllChildren();
                 /**@type {ccui.Layout|cc.Node} 玩家信息容器示例 */
                 let item = playerList._item;
                 /**@type {(ccui.Layout|cc.Node)[]} 玩家列表内容 */
@@ -335,6 +337,7 @@ let CreateLayer = cc.Layer.extend({
 
                         //保存到缓存中
                         playerListData.push(_item);
+                        playerList.addChild(_item);
                         _index++;
                     }
                 }
@@ -350,9 +353,143 @@ let CreateLayer = cc.Layer.extend({
                 //初始化
                 if (!pan._init) {
                     //todo: 规则内容设置右侧
-                    // score
+                    let right = pan.getChildByName("right");
+                    let score0 = right.getChildByName("score0");
+                    let score1 = right.getChildByName("score1");
+                    let score2 = right.getChildByName("score2");
+                    // pan._score0 = score0;
+                    // pan._score1 = score1;
+                    // pan._score2 = score2;
+                    let _scoreList = pan._scoreList = [score0, score1, score2]
+
+                    let add = right.getChildByName("add");
+                    add.addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        //添加到缓存数据中
+                        let scoreList = [];
+                        let isOut = {};
+                        for (let i = 0; i < _scoreList.length; i++) {
+                            let _node = _scoreList[i];
+                            let _str = _node.getString();
+                            if (_str !== "") {
+                                _str = Number(_str);
+                                if (isNaN(_str)) {
+                                    isOut[i] = _node.getString();
+                                    continue;
+                                }
+                            } else {
+                                isOut[i] = _str;
+                                continue;
+                            }
+                            if (isOut.length === 0) scoreList.push(_str);
+                        }
+                        if (isOut.length > 0) {
+                            let _showStr = "输入分数有误，当前：";
+                            for (let [index, _outStr] of Object.entries(isOut)) {
+                                _showStr += "第" + index.toString() +
+                                    "个输入框输入的数字有误，内容为：" +
+                                    (_outStr ? ("（" + _outStr + "）") : "（未输入）")
+                                    + "; "
+                            }
+                            this.addChild(new MsgLayer(_showStr))
+                            return;
+                        }
+                        this.gameDate = scoreList;
+                        // if (!this.data.type) this.data.type = [];
+                        this.data.type.push(scoreList);
+
+                        //刷新
+                        funcList[2](pan);
+                        //移动滚动容器中的内容到最上方
+                        typeList.scrollToTop(0.01, true);
+                    }, this);
+                    pan._add = add;
+
+                    //左侧
+                    let left = pan.getChildByName("left");
+                    /**@type {ccui.ListView|cc.Node} */
+                    let typeList = left.getChildByName("typeList");
+                    typeList._item = left.getChildByName("item");
+                    pan._list = typeList;
                 }
                 //刷新
+                /**@type {Number[]} 对局规则 */
+                let typeData = this.gameDate;
+                /**@type {String[]} */
+                let listData;
+                // if (typeData) {
+                //     for (let i = 0; i < typeData.length; i++) {
+                //         listData.push(typeData[i].toString());
+                //     }
+                // } else {
+                //     for (let i = 0; i < typeData.length; i++) {
+                //         listData.push("");
+                //     }
+                // }
+                if (typeData) {
+                    listData = typeData.map(item => item.toString());
+                } else {
+                    listData = new Array(typeData.length).fill("");
+                }
+                let resultScore = function (listData) {
+                    let scoreList = pan._scoreList;
+                    for (let i = 0; i < scoreList.length; i++) {
+                        let _node = scoreList[i];
+                        let _str = listData[i];
+                        if (_node.getString() !== _str) _node.setString(_str);
+                    }
+                }
+                resultScore(listData);
+
+                //左侧
+                let typeDataList = this.data.type;
+                let typeList = pan._list;
+                typeList.removeAllChildren();
+                if (typeDataList) {
+                    let item = typeList._item;
+                    typeList._list = [];
+                    for (let i = 0; i < typeDataList.length; i++) {
+                        let _item = item.clone();
+                        /**@type {Number[]} */
+                        let _data = typeDataList[i];
+                        /**@type {ccui.Button} */
+                        let but = _item.getChildByName("but");
+                        let _showStr = "";
+                        for (let i = 0; i < _data.length; i++) {
+                            let _score = _data[i];
+                            if (_score) _showStr += "胜平负"[i] + _score.toString();
+                        }
+                        _showStr = _showStr ? _showStr : "无分";
+                        /**@type {{index: Number, score: Number[]}} */
+                        but._data = {
+                            index: i,
+                            score: _data,
+                        };
+                        but.addTouchEventListener(function (sender, type) {
+                            if (type !== 2) return;
+                            //todo: 右侧面板显示对应规则分数
+                            resultScore(sender._data.score);
+                        }, this);
+                        _item._but = but;
+
+                        /**@type {ccui.Button} */
+                        let del = but.getChildByName("del");
+                        del._index = i;
+                        del.addTouchEventListener(function (sender, type) {
+                            if (type !== 2) return;
+                            //删除当前规则
+                            this.data.type.splice(sender._index);
+                            //刷新页面
+                            funcList[2](pan);
+                            //移动滚动容器中的内容到最上方
+                            typeList.scrollToTop(0.01, true);
+                        }, this);
+                        _item._del = del;
+
+                        typeList.addChild(_item);
+                        typeList._list.push(_item);
+                    }
+                }
             },
         ];
         //循环所有的内容面板
