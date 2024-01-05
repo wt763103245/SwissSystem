@@ -14,16 +14,34 @@ let CreateLayer = cc.Layer.extend({
          * 最后一位表示第1位玩家是否胜出，如果没有则表示该局未结束 */
         game: [
             [
+                //玩家1胜利，以第0个规则
                 ["玩家1名称", "玩家2名称", 0, true],
+                //未结束，以第1个规则
                 ["玩家2名称", "玩家1名称", 1],
             ],
         ],
         /**@type {Number[][]} 对局规则得分，
          * 各位置，0表示胜场得分，1表示平场，2表示败场 */
         type: [
+            //胜得3分，平各得1分，败不扣分。显示胜3平1
             [3, 1, 0],
+            //赢1分，败扣1分。显示胜1负-1
             [1, 0, -1],
         ],
+        /**@type {String: String[]} 玩家对战过的玩家，不会再遇见 */
+        against: {
+            //玩家1跟玩家2对战过
+            "玩家1名称": ["玩家2名称"],
+            //玩家2跟玩家1和玩家3对战过
+            "玩家2名称": ["玩家1名称", "玩家3名称"],
+        },
+        /**@type {Number: String[]} 分段。只会跟自己分数相近的人对局 */
+        level: {
+            //玩家1和玩家2的分段是3
+            3: ["玩家1名称", "玩家2名称"],
+            //玩家3的分段是1
+            1: ["玩家3名称"],
+        }
     },
     /**@type {(cc.Node|ccui.Layout)[]} 主界面左侧菜单选项 */
     leftList: [],
@@ -502,6 +520,102 @@ let CreateLayer = cc.Layer.extend({
                 }
             },
             //todo: 面板3/4
+            /**对局面板
+             * @param pan 对局面板
+             */
+            function (pan) {
+                //初始化
+                if (!pan._init) {
+                    /**@type {cc.Node|ccui.Layout} 左侧面板 */
+                    let left = pan.getChildByName("left");
+                    /**@type {cc.Node|ccui.ListView} 滚动列表容器 */
+                    let gameList = left.getChildByName("gameList");
+                    /**@type {cc.Node|ccui.Layout} 列表容器示例 */
+                    gameList._item = left.getChildByName("item");
+                    pan._list = gameList;
+
+                    /**@type {cc.Node|ccui.Layout} 右侧面板 */
+                    let right = pan.getChildByName("right");
+                    /**@type {cc.Node|ccui.Button} 玩家1胜利 */
+                    let win1p = right.getChildByName("1pWin");
+                    /**@type {cc.Node|ccui.Button} 玩家2胜利 */
+                    let win2p = right.getChildByName("2pWin");
+                    right._playerList = [win1p, win2p];
+                    /**@type {cc.Node|ccui.Button} 平局 */
+                    right._winNo = right.getChildByName("noWin");
+
+                    /**@type {cc.Node|ccui.Button} 开始新一场的按钮 */
+                    let start = pan.getChildByName("start");
+                    start.addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        //todo: 开始一场新的轮次
+                        // let playerList = Object.keys(this.data.player);
+                        // let game = [];
+                        // for (let [player, score] of Object.entries(this.data.player)) {
+                        //
+                        // }
+
+                        /**@type {String} 已经配队的玩家 */
+                        let outPlayer = [];
+                        /**@type {[Number, String[]]} 水平等级，按照分数高到低 [分数, [玩家名称,...]] */
+                        let levelData = Object.entries(this.data.level).sort(
+                                (a, b) =>
+                                    b[0] - a[0]);
+                        //循环所有的水平等级
+                        for (let [score, playerList] of levelData) {
+                            //循环当前等级的所有玩家
+                            for (let player of playerList) {
+                                //todo: 判断当前玩家是否在当前这个水平上可以匹配到玩家
+                                /**@type {String[]} 获得当前玩家之前对战过的数据 */
+                                let data = this.data.against[player];
+                                data = data ? data : [];
+
+                                /**@type {String[]} 移除当前玩家 */
+                                let tempPlayerList = playerList.filter(item => item !== player);
+
+                                //开始匹配
+                                /**获得列表中一个随机的玩家
+                                 * @param {String[]} playerList 玩家列表
+                                 * @returns {String[]|*|null} 玩家名称，或者没有玩家返回null
+                                 */
+                                let randomPlayer = function (playerList) {
+                                    /**@type {Number} 当前列表中的玩家数量 */
+                                    let playerCount = playerList.length;
+                                    //判断当前列表中是否没有存在玩家了
+                                    if (!playerCount) return null;
+
+                                    /**@type {String[]} 获得一个当前列表中的随机玩家 */
+                                    let randomElement = playerList[Math.floor(Math.random() * playerCount)];
+
+                                    //之前没有对战过，返回这个玩家
+                                    if (!(randomElement in data)) return randomElement;
+
+                                    //对战过
+                                    //移除这个玩家
+                                    playerList.filter(item => item !== randomElement);
+                                    //然后递归这个方法
+                                    return randomPlayer(playerList);
+                                }
+                                //todo:先匹配同水平玩家
+                                if (tempPlayerList.length > 0) {
+
+                                }
+                            }
+                        }
+
+                        //刷新
+                        funcList[3](pan);
+                        //移动滚动容器中的内容到最上方
+                        gameList.scrollToTop(0.01, true);
+                    }, this);
+                    pan._start = start;
+                }
+
+                //刷新
+                /**@type {[String, String, Number, Boolean][]} 对局数据 */
+                let data = this.data.game;
+
+            },
         ];
         //循环所有的内容面板
         for (let i = 0; i < center.getChildrenCount(); i++) {
