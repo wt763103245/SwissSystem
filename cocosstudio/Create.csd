@@ -589,7 +589,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="pan2" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="pan2" Visible="False" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="556.8000" Y="640.0000" />
                     <Children>
                       <AbstractNodeData Name="title" ActionTag="-496577218" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="240.9000" RightMargin="240.9000" TopMargin="119.4000" BottomMargin="490.6000" FontSize="30" LabelText="规 则" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -780,16 +780,16 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="pan3" Visible="False" ActionTag="-1020110841" VisibleForFrame="False" Tag="112" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="pan3" ActionTag="-1020110841" Tag="112" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="556.8000" Y="640.0000" />
                     <Children>
-                      <AbstractNodeData Name="title" ActionTag="2145996871" Tag="113" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="233.4000" RightMargin="233.4000" TopMargin="110.8000" BottomMargin="499.2000" FontSize="30" LabelText="比赛场" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                      <AbstractNodeData Name="title" ActionTag="2145996871" Tag="113" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="233.4000" RightMargin="233.4000" TopMargin="119.4000" BottomMargin="490.6000" FontSize="30" LabelText="比赛场" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                         <Size X="90.0000" Y="30.0000" />
-                        <AnchorPoint ScaleX="0.5000" />
-                        <Position X="278.4000" Y="499.2000" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="278.4000" Y="505.6000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="0.5000" Y="0.7800" />
+                        <PrePosition X="0.5000" Y="0.7900" />
                         <PreSize X="0.1616" Y="0.0469" />
                         <OutlineColor A="255" R="255" G="0" B="0" />
                         <ShadowColor A="255" R="110" G="110" B="110" />
@@ -813,18 +813,18 @@
                           <AbstractNodeData Name="item" ActionTag="-398971820" Tag="116" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-224.0000" BottomMargin="480.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="278.4000" Y="64.0000" />
                             <Children>
-                              <AbstractNodeData Name="but" ActionTag="1662647739" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="6.9600" RightMargin="6.9600" TopMargin="1.6000" BottomMargin="1.6000" TouchEnable="True" FontSize="30" ButtonText="vs" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                                <Size X="264.4800" Y="60.8000" />
+                              <AbstractNodeData Name="but" ActionTag="1662647739" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="1.6000" BottomMargin="1.6000" TouchEnable="True" FontSize="30" ButtonText="vs" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                                <Size X="278.4000" Y="60.8000" />
                                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                                 <Position X="139.2000" Y="32.0000" />
                                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                                 <CColor A="255" R="255" G="255" B="255" />
                                 <PrePosition X="0.5000" Y="0.5000" />
-                                <PreSize X="0.9500" Y="0.9500" />
+                                <PreSize X="1.0000" Y="0.9500" />
                                 <TextColor A="255" R="65" G="65" B="70" />
-                                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                                <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button10.png" Plist="" />
+                                <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button02.png" Plist="" />
+                                <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button01.png" Plist="" />
                                 <OutlineColor A="255" R="255" G="0" B="0" />
                                 <ShadowColor A="255" R="110" G="110" B="110" />
                               </AbstractNodeData>
@@ -874,7 +874,7 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="right" ActionTag="-1263018421" Tag="118" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="278.4000" TopMargin="160.0000" BottomMargin="160.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                      <AbstractNodeData Name="right" ActionTag="-1263018421" Tag="118" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="278.4000" TopMargin="160.0000" BottomMargin="160.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                         <Size X="278.4000" Y="320.0000" />
                         <Children>
                           <AbstractNodeData Name="title" ActionTag="-1086586677" Tag="134" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="99.2000" RightMargin="99.2000" TopMargin="16.0000" BottomMargin="284.0000" FontSize="20" LabelText="对局情况" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -882,13 +882,13 @@
                             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
                             <Position X="139.2000" Y="304.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                            <CColor A="255" R="255" G="255" B="255" />
+                            <CColor A="255" R="77" G="77" B="77" />
                             <PrePosition X="0.5000" Y="0.9500" />
                             <PreSize X="0.2874" Y="0.0625" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="1pWin" ActionTag="-382013252" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="56.0000" BottomMargin="216.0000" TouchEnable="True" FontSize="20" ButtonText="玩家1名称" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                          <AbstractNodeData Name="1pWin" ActionTag="-382013252" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="56.0000" BottomMargin="216.0000" TouchEnable="True" FontSize="20" ButtonText="玩家1名称" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                             <Size X="125.2800" Y="48.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="139.2000" Y="240.0000" />
@@ -897,13 +897,13 @@
                             <PrePosition X="0.5000" Y="0.7500" />
                             <PreSize X="0.4500" Y="0.1500" />
                             <TextColor A="255" R="0" G="0" B="255" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                            <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button10.png" Plist="" />
+                            <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/blue_button01.png" Plist="" />
+                            <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/blue_button00.png" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="noWin" ActionTag="2137260748" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="136.0000" BottomMargin="136.0000" TouchEnable="True" FontSize="24" ButtonText="平 局" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                          <AbstractNodeData Name="noWin" ActionTag="2137260748" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="136.0000" BottomMargin="136.0000" TouchEnable="True" FontSize="24" ButtonText="平 局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="23" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                             <Size X="125.2800" Y="48.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="139.2000" Y="160.0000" />
@@ -912,13 +912,13 @@
                             <PrePosition X="0.5000" Y="0.5000" />
                             <PreSize X="0.4500" Y="0.1500" />
                             <TextColor A="255" R="26" G="26" B="26" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                            <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button10.png" Plist="" />
+                            <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button02.png" Plist="" />
+                            <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button00.png" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="2pWin" ActionTag="-2043033503" Tag="133" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="216.0000" BottomMargin="56.0000" TouchEnable="True" FontSize="20" ButtonText="玩家2名称" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                          <AbstractNodeData Name="2pWin" ActionTag="-2043033503" Tag="133" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="216.0000" BottomMargin="56.0000" TouchEnable="True" FontSize="20" ButtonText="玩家2名称" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                             <Size X="125.2800" Y="48.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="139.2000" Y="80.0000" />
@@ -926,10 +926,10 @@
                             <CColor A="255" R="255" G="255" B="255" />
                             <PrePosition X="0.5000" Y="0.2500" />
                             <PreSize X="0.4500" Y="0.1500" />
-                            <TextColor A="255" R="255" G="0" B="0" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                            <TextColor A="255" R="127" G="0" B="0" />
+                            <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button10.png" Plist="" />
+                            <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button00.png" Plist="" />
+                            <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button01.png" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
