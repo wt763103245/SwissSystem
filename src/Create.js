@@ -345,7 +345,6 @@ let CreateLayer = cc.Layer.extend({
                 item.setVisible(false);
                 playerList._list = playerListData;
             },
-            //todo: 面板2/3/4
             /**规则添加面板
              * @param pan 规则添加面板
              */
@@ -357,9 +356,6 @@ let CreateLayer = cc.Layer.extend({
                     let score0 = right.getChildByName("score0");
                     let score1 = right.getChildByName("score1");
                     let score2 = right.getChildByName("score2");
-                    // pan._score0 = score0;
-                    // pan._score1 = score1;
-                    // pan._score2 = score2;
                     let _scoreList = pan._scoreList = [score0, score1, score2]
 
                     let add = right.getChildByName("add");
@@ -415,66 +411,78 @@ let CreateLayer = cc.Layer.extend({
                 //刷新
                 /**@type {Number[]} 对局规则 */
                 let typeData = this.gameDate;
-                /**@type {String[]} */
-                let listData;
-                // if (typeData) {
-                //     for (let i = 0; i < typeData.length; i++) {
-                //         listData.push(typeData[i].toString());
-                //     }
-                // } else {
-                //     for (let i = 0; i < typeData.length; i++) {
-                //         listData.push("");
-                //     }
-                // }
-                if (typeData) {
-                    listData = typeData.map(item => item.toString());
-                } else {
-                    listData = new Array(typeData.length).fill("");
-                }
+                /**@type {String[]} 显示文本，胜平负的分数 */
+                let listData = typeData ?
+                    typeData.map(item => item.toString()) :
+                    new Array(typeData.length).fill("");
+
+                /**胜平负的分数 文本输入框控件 列表 */
+                let scoreList = pan._scoreList;
+                /**刷新分数文本框
+                 * @param {listData|String[]} listData 刷新的数据
+                 */
                 let resultScore = function (listData) {
-                    let scoreList = pan._scoreList;
                     for (let i = 0; i < scoreList.length; i++) {
                         let _node = scoreList[i];
                         let _str = listData[i];
                         if (_node.getString() !== _str) _node.setString(_str);
                     }
                 }
+                //刷新一次，按照传入数据
                 resultScore(listData);
 
                 //左侧
+                /**@type {String[]|listData} 当前载入的数据 */
                 let typeDataList = this.data.type;
+                /**@type {cc.Node|ccui.ListView} 左侧 滚动列表容器中 */
                 let typeList = pan._list;
+                //先清空滚动列表容器中的所有子控件
                 typeList.removeAllChildren();
+                //判断当前是否有载入数据
                 if (typeDataList) {
+                    /**@type {cc.Node|ccui.Layout} 列表容器的子控件 示例 */
                     let item = typeList._item;
+                    /**@type {(item)[]} 列表容器的所有子控件 列表 */
                     typeList._list = [];
+                    //根据数据创建所有的子控件
                     for (let i = 0; i < typeDataList.length; i++) {
+                        /**@type {item|cc.Node|ccui.Layout} 克隆一个示例 */
                         let _item = item.clone();
-                        /**@type {Number[]} */
+                        /**@type {Number[]} 对应的数据，胜平负的分数 */
                         let _data = typeDataList[i];
-                        /**@type {ccui.Button} */
+                        /**@type {ccui.Button} 点击按钮 */
                         let but = _item.getChildByName("but");
+                        /**@type {String} 按钮上的文本 */
                         let _showStr = "";
+                        //理论上循环3次
                         for (let i = 0; i < _data.length; i++) {
+                            /**@type {Number} 当前胜负对应的分数 */
                             let _score = _data[i];
+                            //设定为如果不为0，则显示对应的文本。胜1平-1负-2，如果平为0（胜1负-2）
                             if (_score) _showStr += "胜平负"[i] + _score.toString();
                         }
+                        //如果所有的分数都为0，则显示这个
                         _showStr = _showStr ? _showStr : "无分";
-                        /**@type {{index: Number, score: Number[]}} */
+                        /**@type {{index: Number, score: Number[]}} 按钮需要绑定的相关参数 */
                         but._data = {
+                            /**@type {Number} 当前按钮对应的数据序号 */
                             index: i,
+                            /**@type {Number[]} 当前按钮对应的规则 胜平负分数 */
                             score: _data,
                         };
+                        //点击对应规则
                         but.addTouchEventListener(function (sender, type) {
                             if (type !== 2) return;
-                            //todo: 右侧面板显示对应规则分数
+                            //右侧面板显示对应规则分数
                             resultScore(sender._data.score);
                         }, this);
                         _item._but = but;
 
-                        /**@type {ccui.Button} */
+                        /**@type {ccui.Button} 按钮上的删除按钮 */
                         let del = but.getChildByName("del");
+                        /**@type {Number} 保存对应数据的序号，用来删除 */
                         del._index = i;
+                        //删除对应规则数据
                         del.addTouchEventListener(function (sender, type) {
                             if (type !== 2) return;
                             //删除当前规则
@@ -486,11 +494,14 @@ let CreateLayer = cc.Layer.extend({
                         }, this);
                         _item._del = del;
 
+                        //添加这个规则到左侧面板上
                         typeList.addChild(_item);
+                        //保存到缓存中方便调用
                         typeList._list.push(_item);
                     }
                 }
             },
+            //todo: 面板3/4
         ];
         //循环所有的内容面板
         for (let i = 0; i < center.getChildrenCount(); i++) {
