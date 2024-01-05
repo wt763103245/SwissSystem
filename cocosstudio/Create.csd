@@ -945,6 +945,21 @@
                         <EndColor A="255" R="255" G="255" B="255" />
                         <ColorVector ScaleY="1.0000" />
                       </AbstractNodeData>
+                      <AbstractNodeData Name="start" ActionTag="1021059841" Tag="124" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="584.6400" RightMargin="-217.8400" TopMargin="295.5000" BottomMargin="295.5000" TouchEnable="True" FontSize="30" ButtonText="开始一局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                        <Size X="190.0000" Y="49.0000" />
+                        <AnchorPoint ScaleY="0.5000" />
+                        <Position X="584.6400" Y="320.0000" />
+                        <Scale ScaleX="0.8000" ScaleY="0.8000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="1.0500" Y="0.5000" />
+                        <PreSize X="0.3412" Y="0.0766" />
+                        <TextColor A="255" R="65" G="65" B="70" />
+                        <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/blue_button13.png" Plist="" />
+                        <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button00.png" Plist="" />
+                        <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button01.png" Plist="" />
+                        <OutlineColor A="255" R="255" G="0" B="0" />
+                        <ShadowColor A="255" R="110" G="110" B="110" />
+                      </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="278.4000" Y="320.0000" />
