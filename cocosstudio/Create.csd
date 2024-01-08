@@ -1175,7 +1175,7 @@
                             <EndColor A="255" R="255" G="255" B="255" />
                             <ColorVector ScaleY="1.0000" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="pan1" Visible="False" ActionTag="1714049908" VisibleForFrame="False" Tag="153" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                          <AbstractNodeData Name="pan1" ActionTag="1714049908" Tag="153" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                             <Size X="278.4000" Y="320.0000" />
                             <Children>
                               <AbstractNodeData Name="title" ActionTag="-2130041036" Tag="154" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="99.2000" RightMargin="99.2000" TopMargin="16.0000" BottomMargin="284.0000" FontSize="20" LabelText="对局情况" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

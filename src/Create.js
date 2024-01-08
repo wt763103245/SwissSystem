@@ -540,38 +540,35 @@ let CreateLayer = cc.Layer.extend({
                     let win1p = right.getChildByName("1pWin");
                     /**@type {cc.Node|ccui.Button} 玩家2胜利 */
                     let win2p = right.getChildByName("2pWin");
-                    right._playerList = [win1p, win2p];
+                    pan._playerList = [win1p, win2p];
                     /**@type {cc.Node|ccui.Button} 平局 */
-                    right._winNo = right.getChildByName("noWin");
+                    pan._winNo = right.getChildByName("noWin");
 
                     /**@type {cc.Node|ccui.Button} 开始新一场的按钮 */
                     let start = pan.getChildByName("start");
                     start.addTouchEventListener(function (sender, type) {
                         if (type !== 2) return;
-                        //todo: 开始一场新的轮次
-                        // let playerList = Object.keys(this.data.player);
-                        // let game = [];
-                        // for (let [player, score] of Object.entries(this.data.player)) {
-                        //
-                        // }
 
-                        /**@type {String} 已经配队的玩家 */
+                        /**@type {([String, String, Number, Boolean])[]} 玩家对局 */
+                        let _gameList = [];
+
+                        /**@type {String[]} 已经配队的玩家 */
                         let outPlayer = [];
                         /**@type {[Number, String[]]} 水平等级，按照分数高到低 [分数, [玩家名称,...]] */
                         let levelData = Object.entries(this.data.level).sort(
-                                (a, b) =>
-                                    b[0] - a[0]);
+                            (a, b) =>
+                                b[0] - a[0]);
                         //循环所有的水平等级
                         for (let [score, playerList] of levelData) {
                             //循环当前等级的所有玩家
                             for (let player of playerList) {
+                                //已经匹配过
+                                if (player in outPlayer) continue;
+
                                 //todo: 判断当前玩家是否在当前这个水平上可以匹配到玩家
                                 /**@type {String[]} 获得当前玩家之前对战过的数据 */
                                 let data = this.data.against[player];
                                 data = data ? data : [];
-
-                                /**@type {String[]} 移除当前玩家 */
-                                let tempPlayerList = playerList.filter(item => item !== player);
 
                                 //开始匹配
                                 /**获得列表中一个随机的玩家
@@ -584,11 +581,11 @@ let CreateLayer = cc.Layer.extend({
                                     //判断当前列表中是否没有存在玩家了
                                     if (!playerCount) return null;
 
-                                    /**@type {String[]} 获得一个当前列表中的随机玩家 */
+                                    /**@type {String} 获得一个当前列表中的随机玩家 */
                                     let randomElement = playerList[Math.floor(Math.random() * playerCount)];
 
                                     //之前没有对战过，返回这个玩家
-                                    if (!(randomElement in data)) return randomElement;
+                                    if (!(randomElement in data) && !(randomElement in outPlayer)) return randomElement;
 
                                     //对战过
                                     //移除这个玩家
@@ -597,11 +594,37 @@ let CreateLayer = cc.Layer.extend({
                                     return randomPlayer(playerList);
                                 }
                                 //todo:先匹配同水平玩家
-                                if (tempPlayerList.length > 0) {
-
+                                let vsPlayer = "";
+                                for (let [_score, _playerList] of levelData) {
+                                    if (_score <= score) {
+                                        if (_score === score) {
+                                            /**@type {String[]} 移除当前玩家 */
+                                            let _playerList = _playerList.filter(item => item !== player);
+                                        }
+                                        vsPlayer = randomPlayer(_playerList);
+                                        if (vsPlayer) break;
+                                    }
                                 }
+                                if (vsPlayer) {
+                                    //添加到匹配过
+                                    outPlayer.push(vsPlayer);
+                                    //添加到对战过
+                                    if (!this.data.against[player]) this.data.against[player] = [];
+                                    this.data.against[player].push(vsPlayer);
+                                    if (!this.data.against[vsPlayer]) this.data.against[vsPlayer] = [];
+                                    this.data.against[vsPlayer].push(player);
+
+                                    //添加玩家对局
+                                    _gameList.push([player, vsPlayer]);
+                                } else {
+                                    MsgLayer("玩家：" + player + " 没有获得对战对手");
+                                }
+                                outPlayer.push(player);
                             }
                         }
+
+                        //保存全部玩家对局到缓存中
+                        this.data.game.push(_gameList);
 
                         //刷新
                         funcList[3](pan);
@@ -612,9 +635,63 @@ let CreateLayer = cc.Layer.extend({
                 }
 
                 //刷新
+                //左侧列表容器
+                let gameList = pan._list;
+                //清除之前的内容
+                gameList.removeAllChildren();
+                //左侧列表容器 的内容示例
+                let item = gameList._item;
+                //先显示示例
+                item.setVisible(true);
                 /**@type {[String, String, Number, Boolean][]} 对局数据 */
-                let data = this.data.game;
+                let dataList = this.data.game;
+                //循环所有的对局
+                for (let i = 0; i < dataList.length; i++) {
+                    let data = dataList[i];
+                    //未结束对局，test暂时改为只添加了对战双方玩家数据时，没有添加规则
+                    if (data.length <= 2) {
+                        //克隆一个示例
+                        /**@type {cc.Node|ccui.Layout} */
+                        let _item = item.clone();
 
+                        /**@type {ccui.Text} */
+                        let name1 = _item.getChildByName("1p");
+                        let player1 = data[0];
+                        if (name1.getString() !== player1) name1.setString(player1);
+
+                        /**@type {ccui.Text} */
+                        let name2 = _item.getChildByName("2p");
+                        let player2 = data[1];
+                        if (name2.getString() !== player2) name2.setString(player2);
+
+                        /**@type {ccui.Button} */
+                        let but = _item.getChildByName("but");
+                        // but._data = data;
+                        but._data = {
+                            player1: player1,
+                            player2: player2,
+                        };
+                        but.addTouchEventListener(function (sender, type) {
+                            if (type !== 2) return;
+                            //将点击的数据显示到右边面板
+                            let data = sender._data;
+                            let player1 = data.player1;
+                            let player2 = data.player2;
+                            let [win1p, win2p] = pan._playerList;
+                            for (let [_player, _node] of
+                                [[player1, win1p], [player2, win2p]]) {
+                                if (_node.getTitleText() !== _player) _node.setTitleText(_player);
+                            }
+                        }, this);
+
+                        //添加到列表容器中
+                        gameList.addChild(_item);
+                    }
+                }
+                //隐藏示例
+                item.setVisible(false);
+                //移动滚动容器中的内容到最上方
+                gameList.scrollToTop(0.01, true);
             },
         ];
         //循环所有的内容面板
