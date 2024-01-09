@@ -46,7 +46,8 @@ let CreateLayer = cc.Layer.extend({
     },
     /**@type {(cc.Node|ccui.Layout)[]} 主界面左侧菜单选项 */
     leftList: [],
-    leftListFunc: function () {},
+    leftListFunc: function () {
+    },
     /**@type {(cc.Node|ccui.Layout)[]} 中部显示内容选项 */
     centerList: [],
     centerListFunc: [],
@@ -135,8 +136,20 @@ let CreateLayer = cc.Layer.extend({
     },
     Exit: function (sender, type = 2) {
         if (type !== 2) return;
+        //保存功能
+        this.Save();
+
         //移除这个界面
         this.removeFromParent();
+    },
+    /**保存数据 */
+    Save: function () {
+        /**关键数据 */
+        let data = this.data;
+        /**游戏名称 */
+        let name = this.data?.name;
+        //判空，然后保存数据
+        if (name) cc.sys.localStorage.setItem(name, JSON.stringify(data));
     },
     /**初始化中部ui
      * @param {ccui.Layout|cc.Node} main 主界面基础容器
