@@ -903,7 +903,7 @@
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="noWin" ActionTag="2137260748" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="136.0000" BottomMargin="136.0000" TouchEnable="True" FontSize="24" ButtonText="平 局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="23" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                          <AbstractNodeData Name="noWin" ActionTag="2137260748" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="76.5600" RightMargin="76.5600" TopMargin="136.0000" BottomMargin="136.0000" TouchEnable="True" FontSize="24" ButtonText="平 局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                             <Size X="125.2800" Y="48.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <Position X="139.2000" Y="160.0000" />
@@ -913,8 +913,8 @@
                             <PreSize X="0.4500" Y="0.1500" />
                             <TextColor A="255" R="26" G="26" B="26" />
                             <DisabledFileData Type="Normal" Path="kenney_ui-pack/PNG/red_button10.png" Plist="" />
-                            <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button02.png" Plist="" />
-                            <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button00.png" Plist="" />
+                            <PressedFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button00.png" Plist="" />
+                            <NormalFileData Type="Normal" Path="kenney_ui-pack/PNG/grey_button15.png" Plist="" />
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>

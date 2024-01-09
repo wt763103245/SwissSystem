@@ -41,7 +41,7 @@ let CreateLayer = cc.Layer.extend({
             3: ["玩家1名称", "玩家2名称"],
             //玩家3的分段是1
             1: ["玩家3名称"],
-        }
+        },
     },
     /**@type {(cc.Node|ccui.Layout)[]} 主界面左侧菜单选项 */
     leftList: [],
@@ -56,6 +56,8 @@ let CreateLayer = cc.Layer.extend({
     },
     /**@type {Number[]} 对局规则 */
     gameDate: [1, 0, -1],
+    /**@type {Number} 当前对局序号。当前this.data.game[第几场][currentGame] */
+    currentGame: -1,
     /**创建方法
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
@@ -519,7 +521,6 @@ let CreateLayer = cc.Layer.extend({
                     }
                 }
             },
-            //todo: 面板3/4
             /**对局面板
              * @param pan 对局面板
              */
@@ -540,7 +541,10 @@ let CreateLayer = cc.Layer.extend({
                     let win1p = right.getChildByName("1pWin");
                     /**@type {cc.Node|ccui.Button} 玩家2胜利 */
                     let win2p = right.getChildByName("2pWin");
-                    pan._playerList = [win1p, win2p];
+                    /**@type {(ccui.Button|cc.Node)[]} 玩家名称按钮列表 */
+                    let _playerList = pan._playerList = [win1p, win2p];
+                    //循环清空玩家名称
+                    for (let _node of _playerList) if (_node.getTitleText() !== "") _node.setTitleText("");
                     /**@type {cc.Node|ccui.Button} 平局 */
                     pan._winNo = right.getChildByName("noWin");
 
@@ -609,15 +613,28 @@ let CreateLayer = cc.Layer.extend({
                                     //添加到匹配过
                                     outPlayer.push(vsPlayer);
                                     //添加到对战过
-                                    if (!this.data.against[player]) this.data.against[player] = [];
-                                    this.data.against[player].push(vsPlayer);
-                                    if (!this.data.against[vsPlayer]) this.data.against[vsPlayer] = [];
-                                    this.data.against[vsPlayer].push(player);
+                                    for (let [p1, p2] of [
+                                        [player, vsPlayer], [vsPlayer, player]
+                                    ]) {
+                                        if (!this.data.against[p1]) this.data.against[p1] = [];
+                                        this.data.against[p1].push(p2);
+                                    }
+                                    // if (!this.data.against[player]) this.data.against[player] = [];
+                                    // this.data.against[player].push(vsPlayer);
+                                    // if (!this.data.against[vsPlayer]) this.data.against[vsPlayer] = [];
+                                    // this.data.against[vsPlayer].push(player);
 
                                     //添加玩家对局
                                     _gameList.push([player, vsPlayer]);
                                 } else {
-                                    MsgLayer("玩家：" + player + " 没有获得对战对手");
+                                    //test理论上应该不会到这里
+                                    let errorText = "玩家：" + player + " 没有获得对战对手";
+                                    try {
+                                        throw new Error(errorText);
+                                    } catch (error) {
+                                        console.error(error);
+                                    }
+                                    this.addChild(new MsgLayer(errorText));
                                 }
                                 outPlayer.push(player);
                             }
@@ -667,21 +684,33 @@ let CreateLayer = cc.Layer.extend({
                         /**@type {ccui.Button} */
                         let but = _item.getChildByName("but");
                         // but._data = data;
+                        /**@typedef {{player1: String, player2: String, index: Number}} butData 保存按钮相关数据到缓存中 */
                         but._data = {
+                            /**@type {String} 玩家1名称 */
                             player1: player1,
                             player2: player2,
+                            /**@type {Number} 当前对局序号 */
+                            index: i,
                         };
                         but.addTouchEventListener(function (sender, type) {
                             if (type !== 2) return;
                             //将点击的数据显示到右边面板
+                            /**@type {butData} */
                             let data = sender._data;
+                            /**@type {String} 玩家1名称 */
                             let player1 = data.player1;
+                            /**@type {String} 玩家2名称 */
                             let player2 = data.player2;
+                            /**@type {ccui.Button} 对应玩家的按钮 */
                             let [win1p, win2p] = pan._playerList;
                             for (let [_player, _node] of
                                 [[player1, win1p], [player2, win2p]]) {
+                                //对应按钮显示对应数据
                                 if (_node.getTitleText() !== _player) _node.setTitleText(_player);
                             }
+
+                            //保存当前对局相关参数到缓存中
+                            this.currentGame = data.index;
                         }, this);
 
                         //添加到列表容器中
@@ -693,6 +722,7 @@ let CreateLayer = cc.Layer.extend({
                 //移动滚动容器中的内容到最上方
                 gameList.scrollToTop(0.01, true);
             },
+            //todo: 面板4
         ];
         //循环所有的内容面板
         for (let i = 0; i < center.getChildrenCount(); i++) {
