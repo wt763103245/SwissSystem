@@ -46,8 +46,10 @@ let CreateLayer = cc.Layer.extend({
     },
     /**@type {(cc.Node|ccui.Layout)[]} 主界面左侧菜单选项 */
     leftList: [],
+    leftListFunc: function () {},
     /**@type {(cc.Node|ccui.Layout)[]} 中部显示内容选项 */
     centerList: [],
+    centerListFunc: [],
     /**@type {{name: String, score: Number}} 当前修改玩家的数据，临时数据 */
     playerData: {
         /**@type {String} 名称 */
@@ -150,7 +152,7 @@ let CreateLayer = cc.Layer.extend({
             data[data.length - 1][this.currentGame][3] = type;
         };
         /**@type {Function[]} 各面板初始化方法 */
-        let funcList = [
+        let funcList = this.centerListFunc = [
             /**比赛名称面板
              * @param pan 比赛名称面板
              */
@@ -636,7 +638,7 @@ let CreateLayer = cc.Layer.extend({
                                     if (_score <= score) {
                                         if (_score === score) {
                                             /**@type {String[]} 移除当前玩家 */
-                                            let _playerList = _playerList.filter(item => item !== player);
+                                            _playerList = _playerList.filter(item => item !== player);
                                         }
                                         vsPlayer = randomPlayer(_playerList);
                                         if (vsPlayer) break;
@@ -760,7 +762,6 @@ let CreateLayer = cc.Layer.extend({
                 //移动滚动容器中的内容到最上方
                 gameList.scrollToTop(0.01, true);
             },
-            //todo: 面板4
             /**结束面板
              * @param pan
              */
@@ -795,7 +796,7 @@ let CreateLayer = cc.Layer.extend({
                     // //循环清空玩家名称
                     // for (let _node of _list) if (_node.getTitleText() !== "") _node.setTitleText("");
                     /**@type {cc.Node|ccui.Button} 平局 */
-                    let winNo pan._winNo = right.getChildByName("noWin");
+                    let winNo = pan._winNo = right.getChildByName("noWin");
 
                     let newList = _list.slice(); // 创建一个新数组，它是_playerList的浅复制
                     newList.push(winNo); // 在新数组后面添加一个元素
@@ -820,13 +821,14 @@ let CreateLayer = cc.Layer.extend({
                         }, this);
                     }
 
-                    //todo: 结束按钮
+                    //结束按钮
                     /**@type {ccui.Button} 结束本局按钮 */
                     let over = pan._over = right.getChildByName("over");
                     over.addTouchEventListener(function (sender, type) {
                         if (type !== 2) return;
-                        //todo: 开始一局
-
+                        //开始一局
+                        // 隐藏当前界面，显示第3界面，执行第3界面的开始一局按钮的点击逻辑
+                        this.leftListFunc(3);
                     }, this);
 
                     //左侧
@@ -934,10 +936,11 @@ let CreateLayer = cc.Layer.extend({
                             }
                             this.addChild(new MsgLayer(errorText));
                         }
-
                         gameList.addChild(_item);
                     }
                     item.setVisible(false);
+                    //移动滚动容器中的内容到最上方
+                    gameList.scrollToTop(0.01, true);
                 }
             },
         ];
@@ -961,20 +964,30 @@ let CreateLayer = cc.Layer.extend({
         let left = main.getChildByName("Left");
         /**@type {ccui.ListView|cc.Node} 左侧选项列表 */
         let menuList = left.getChildByName("menuList");
-        let butList = [
-            //todo: 左侧面板ui按钮点击逻辑
-            function () {
-
-            },
-        ];
+        //左侧面板ui按钮点击逻辑
+        /**@type {(cc.Node|ccui.Layout)[]} 全部中间面板 */
+        let centerList = this.centerList;
+        let butFunc = this.leftListFunc = function (type) {
+            for (let i = 0; i < centerList.length; i++) {
+                let _node = centerList[i];
+                let isShow = i !== type;
+                _node.setVisible(isShow);
+                if (isShow) this.centerListFunc[i](_node);
+            }
+        };
         //循环所有的选项
         for (let i = 0; i < menuList.getChildrenCount(); i++) {
             /**@type {ccui.Layout|cc.Node} 对应菜单选项基础容器 */
             let child = menuList.getChildByName("item" + i);
-            /**@type {ccui.Button|cc.Node} 对应按钮 */
+            /**@type {ccui.Button} 对应按钮 */
             let but = child.getChildByName("but");
             /**@type {Number} 保存下标位置到按钮中 */
-            but._ind = i;
+            but._index = i;
+            but.addTouchEventListener(function (sender, type) {
+                if (type !== 2) return;
+                //左侧按钮打开显示右侧对应面板
+                butFunc(sender._index);
+            }, this);
             child._but = but;
             this.leftList.push(child);
         }
