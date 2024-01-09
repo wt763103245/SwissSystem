@@ -9,13 +9,14 @@ let CreateLayer = cc.Layer.extend({
             "玩家1名称": 0,
             "玩家2名称": 1,
         },
-        /**@type {([String, String, Number, Boolean])[]} 对局数据，
+        /**@type {([String, String, Number, Number])[]} 对局数据，
          * 外面大列表表示全部，里面表示每轮，第三位表示对局类型，
-         * 最后一位表示第1位玩家是否胜出，如果没有则表示该局未结束 */
+         * 最后一位表示第1位对局情况，如果没有则表示该局未结束
+         * 0表示玩家1胜利，1表示玩家2胜利，2表示平局*/
         game: [
             [
                 //玩家1胜利，以第0个规则
-                ["玩家1名称", "玩家2名称", 0, true],
+                ["玩家1名称", "玩家2名称", 0, 0],
                 //未结束，以第1个规则
                 ["玩家2名称", "玩家1名称", 1],
             ],
@@ -141,6 +142,13 @@ let CreateLayer = cc.Layer.extend({
     initUi_Center: function (main) {
         /**@type {ccui.Layout|cc.Node} 中部容器 */
         let center = main.getChildByName("Center");
+        /**胜利方法
+         * @param type {Number}
+         */
+        let winFunc = function (type) {
+            let data = this.data.game;
+            data[data.length - 1][this.currentGame][3] = type;
+        };
         /**@type {Function[]} 各面板初始化方法 */
         let funcList = [
             /**比赛名称面板
@@ -371,7 +379,7 @@ let CreateLayer = cc.Layer.extend({
             function (pan) {
                 //初始化
                 if (!pan._init) {
-                    //todo: 规则内容设置右侧
+                    //规则内容设置右侧
                     let right = pan.getChildByName("right");
                     let score0 = right.getChildByName("score0");
                     let score1 = right.getChildByName("score1");
@@ -527,6 +535,7 @@ let CreateLayer = cc.Layer.extend({
             function (pan) {
                 //初始化
                 if (!pan._init) {
+                    //左侧
                     /**@type {cc.Node|ccui.Layout} 左侧面板 */
                     let left = pan.getChildByName("left");
                     /**@type {cc.Node|ccui.ListView} 滚动列表容器 */
@@ -535,18 +544,42 @@ let CreateLayer = cc.Layer.extend({
                     gameList._item = left.getChildByName("item");
                     pan._list = gameList;
 
+                    //右侧
                     /**@type {cc.Node|ccui.Layout} 右侧面板 */
                     let right = pan.getChildByName("right");
+                    //先隐藏
+                    right.setVisible(false);
                     /**@type {cc.Node|ccui.Button} 玩家1胜利 */
                     let win1p = right.getChildByName("1pWin");
                     /**@type {cc.Node|ccui.Button} 玩家2胜利 */
                     let win2p = right.getChildByName("2pWin");
                     /**@type {(ccui.Button|cc.Node)[]} 玩家名称按钮列表 */
                     let _playerList = pan._playerList = [win1p, win2p];
-                    //循环清空玩家名称
-                    for (let _node of _playerList) if (_node.getTitleText() !== "") _node.setTitleText("");
+                    // //循环清空玩家名称
+                    // for (let _node of _playerList) if (_node.getTitleText() !== "") _node.setTitleText("");
+                    let newList = _playerList.slice(); // 创建一个新数组，它是_playerList的浅复制
                     /**@type {cc.Node|ccui.Button} 平局 */
-                    pan._winNo = right.getChildByName("noWin");
+                    let winNo = pan._winNo = right.getChildByName("noWin");
+                    newList.push(winNo); // 在新数组后面添加一个元素
+                    //玩家胜利按钮
+                    for (let i = 0; i < newList.length; i++) {
+                        /**@type {ccui.Button} 对应玩家按钮或者平局按钮 */
+                        let _but = newList[i];
+                        /**@type {Number} 当前点击的按钮序号 */
+                        _but._index = i;
+                        //点击对应按钮的逻辑，谁胜利
+                        _but.addTouchEventListener(function (sender, type) {
+                            if (type !== 2) return;
+                            //使用通用胜利方法，会改变缓存中的数据
+                            winFunc(sender._index);
+
+                            //隐藏右边面板
+                            right.setVisible(false);
+                            //刷新页面
+                            funcList[3](pan);
+                        }, this);
+                    }
+                    pan._right = right;
 
                     /**@type {cc.Node|ccui.Button} 开始新一场的按钮 */
                     let start = pan.getChildByName("start");
@@ -569,7 +602,7 @@ let CreateLayer = cc.Layer.extend({
                                 //已经匹配过
                                 if (player in outPlayer) continue;
 
-                                //todo: 判断当前玩家是否在当前这个水平上可以匹配到玩家
+                                //判断当前玩家是否在当前这个水平上可以匹配到玩家
                                 /**@type {String[]} 获得当前玩家之前对战过的数据 */
                                 let data = this.data.against[player];
                                 data = data ? data : [];
@@ -597,7 +630,7 @@ let CreateLayer = cc.Layer.extend({
                                     //然后递归这个方法
                                     return randomPlayer(playerList);
                                 }
-                                //todo:先匹配同水平玩家
+                                //先匹配同水平玩家
                                 let vsPlayer = "";
                                 for (let [_score, _playerList] of levelData) {
                                     if (_score <= score) {
@@ -662,6 +695,8 @@ let CreateLayer = cc.Layer.extend({
                 item.setVisible(true);
                 /**@type {[String, String, Number, Boolean][]} 对局数据 */
                 let dataList = this.data.game;
+                /**右侧面板*/
+                let right = pan._right;
                 //循环所有的对局
                 for (let i = 0; i < dataList.length; i++) {
                     let data = dataList[i];
@@ -711,6 +746,9 @@ let CreateLayer = cc.Layer.extend({
 
                             //保存当前对局相关参数到缓存中
                             this.currentGame = data.index;
+
+                            //显示右侧
+                            right.setVisible(true);
                         }, this);
 
                         //添加到列表容器中
@@ -723,6 +761,185 @@ let CreateLayer = cc.Layer.extend({
                 gameList.scrollToTop(0.01, true);
             },
             //todo: 面板4
+            /**结束面板
+             * @param pan
+             */
+            function (pan) {
+                //初始化
+                if (!pan._init) {
+                    //右侧
+                    /**@type {ccui.Layout|cc.Node} 右侧面板 */
+                    let right = pan.getChildByName("right");
+                    /**@type {ccui.Layout|cc.Node} 玩家分数列表面板 */
+                    let pan0 = right.getChildByName("pan0");
+                    //初始显示这个面板
+                    pan0.setVisible(true);
+                    //之前可能被隐藏
+                    pan.setVisible(true);
+                    /**@type {ccui.ListView|cc.Node} 玩家分数列表容器 */
+                    let _playerList = pan0.getChildByName("playerList");
+                    /**@type {ccui.Layout|cc.Node} 玩家分数面板 */
+                    _playerList._item = pan0.getChildByName("item");
+                    pan._playerList = _playerList;
+
+                    /**@type {ccui.Layout|cc.Node} 对局更改界面 */
+                    let pan1 = right.getChildByName("pan1");
+                    //初始隐藏这个面板，当点击左侧数据后显示这个
+                    pan1.setVisible(false);
+                    /**@type {cc.Node|ccui.Button} 玩家1胜利 */
+                    let win1p = pan1.getChildByName("1pWin");
+                    /**@type {cc.Node|ccui.Button} 玩家2胜利 */
+                    let win2p = pan1.getChildByName("2pWin");
+                    /**@type {(ccui.Button|cc.Node)[]} 玩家名称按钮列表 */
+                    let _list = pan._butplayerList = [win1p, win2p];
+                    // //循环清空玩家名称
+                    // for (let _node of _list) if (_node.getTitleText() !== "") _node.setTitleText("");
+                    /**@type {cc.Node|ccui.Button} 平局 */
+                    let winNo pan._winNo = right.getChildByName("noWin");
+
+                    let newList = _list.slice(); // 创建一个新数组，它是_playerList的浅复制
+                    newList.push(winNo); // 在新数组后面添加一个元素
+                    //玩家胜利按钮
+                    for (let i = 0; i < newList.length; i++) {
+                        /**@type {ccui.Button} 对应玩家按钮或者平局按钮 */
+                        let _but = newList[i];
+                        /**@type {Number} 当前点击的按钮序号 */
+                        _but._index = i;
+                        //点击对应按钮的逻辑，谁胜利
+                        _but.addTouchEventListener(function (sender, type) {
+                            if (type !== 2) return;
+                            //使用通用胜利方法，会改变缓存中的数据
+                            winFunc(sender._index);
+
+                            //隐藏胜负面板
+                            pan0.setVisible(true);
+                            //显示玩家分数面板
+                            pan1.setVisible(false);
+                            //刷新页面
+                            funcList[4](pan);
+                        }, this);
+                    }
+
+                    //todo: 结束按钮
+                    /**@type {ccui.Button} 结束本局按钮 */
+                    let over = pan._over = right.getChildByName("over");
+                    over.addTouchEventListener(function (sender, type) {
+                        if (type !== 2) return;
+                        //todo: 开始一局
+
+                    }, this);
+
+                    //左侧
+                    let left = pan.getChildByName("left");
+                    let gameList = left.getChildByName("gameList");
+                    gameList._item = left.getChildByName("item");
+                    pan._gameList = gameList;
+                }
+
+                //刷新
+                //右侧0
+                let data = this.data;
+                /**@type {[String, Number][]} 各玩家分数 */
+                let playerScore = Object.entries(data.player);
+                let playerList = pan._playerList;
+                //先清除之前的所有玩家数据
+                playerList.removeAllChildren();
+                //判空
+                if (playerScore.length) {
+                    let item = playerList._item;
+                    item.setVisible(true);
+                    //循环所有的玩家分数
+                    for (let [name, score] of playerScore) {
+                        /**@type {cc.Node|ccui.Layout} 玩家分数面板 */
+                        let _item = item.clone();
+                        // /**@type {ccui.Text} 玩家名称 */
+                        // let nameNode = _item.getChildByName("name");
+                        // /**@type {ccui.Text} 玩家分数 */
+                        // let scoreNode = _item.getChildByName("score");
+                        for (let [_node, _data] of [
+                            [_item.getChildByName("name"), name],
+                            [_item.getChildByName("score"), score],
+                        ]) {
+                            if (_node.getString() !== _data) _node.setString(_data);
+                        }
+                        playerList.addChild(_item);
+                    }
+                    //隐藏示例
+                    item.setVisible(false);
+                }
+                //移动滚动容器中的内容到最上方
+                playerList.scrollToTop(0.01, true);
+
+                //左侧
+                let gameList = pan._gameList;
+                gameList.removeAllChildren();
+                let game = data.game;
+                game = game[game.length - 1];
+                if (game.length) {
+                    let item = gameList._item;
+                    item.setVisible(true);
+                    /**@type {(ccui.Button|cc.Node)[]} 玩家名称按钮列表 */
+                    let _playerList = pan._butplayerList
+                    //循环最后一场的所有对局
+                    for (let i = 0; i < game.length; i++) {
+                        let _item = item.clone();
+                        let gameData = game[i];
+
+                        //玩家名称
+                        let player1 = _item.getChildByName("1p");
+                        let player2 = _item.getChildByName("2p");
+                        let player1Name = gameData[0];
+                        let player2Name = gameData[1];
+                        for (let [_node, _name] of [
+                            [player1, player1Name],
+                            [player2, player2Name],
+                        ]) if (_node.getTitleText() !== _name) _node.setTitleText(_name);
+
+                        //胜负
+                        for (let _node of [player1, player2]) _node._win = _node.get("win");
+
+                        //按钮
+                        let but = _item.getChildByName("but");
+
+                        //判错
+                        if (gameData.length >= 4) {
+                            if (!but.isEnabled()) but.setEnabled(true);
+                            but._data = {
+                                player1Name: player1Name,
+                                player2Name: player2Name,
+                                currentGame: i,
+                            };
+                            but.addTouchEventListener(function (sender, type) {
+                                if (type !== 2) return;
+                                //显示到右边 玩家分数面板
+                                let _data = sender._data;
+                                let player1 = _playerList[0];
+                                let player2 = _playerList[1];
+                                for (let [_node, _name] of [
+                                    [player1, _data.player1Name],
+                                    [player2, _data.player2Name],
+                                ]) if (_node.getTitleText() !== _name) _node.setTitleText(_name);
+
+                                //准备修改对应对局参数
+                                this.currentGame = sender.currentGame;
+                            }, this);
+                        } else {
+                            //test理论上不会到这里
+                            but.setEnabled(false);
+                            let errorText = "错误对局" + i + JSON.stringify(gameData);
+                            try {
+                                throw new Error(errorText);
+                            } catch (error) {
+                                console.error(error);
+                            }
+                            this.addChild(new MsgLayer(errorText));
+                        }
+
+                        gameList.addChild(_item);
+                    }
+                    item.setVisible(false);
+                }
+            },
         ];
         //循环所有的内容面板
         for (let i = 0; i < center.getChildrenCount(); i++) {
