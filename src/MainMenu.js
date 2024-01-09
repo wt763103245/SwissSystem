@@ -76,8 +76,8 @@ let MainSceneLayer = cc.Layer.extend({
             if (type != 2) return;
             cc.log("点击读取按钮")
             //todo:打开选择存档界面
-            // let newUi = new CreateLayer(data);
-            // this.addChild(newUi);
+            let newUi = new CreateLayer(data);
+            this.addChild(newUi);
         }, this);
 
         if (menuListLength > 2) {

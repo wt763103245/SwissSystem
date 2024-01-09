@@ -297,6 +297,8 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
+                        "LeftMargin": 0.0,
+                        "RightMargin": 0.0,
                         "BottomMargin": 256.0,
                         "Tag": 12,
                         "Children": [
@@ -471,6 +473,8 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
+                        "LeftMargin": 0.0,
+                        "RightMargin": 0.0,
                         "TopMargin": 64.0,
                         "BottomMargin": 192.0,
                         "Tag": 15,
@@ -649,6 +653,8 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
+                        "LeftMargin": 0.0,
+                        "RightMargin": 0.0,
                         "TopMargin": 128.0,
                         "BottomMargin": 128.0,
                         "Tag": 18,
@@ -828,6 +834,8 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
+                        "LeftMargin": 0.0,
+                        "RightMargin": 0.0,
                         "TopMargin": 192.0,
                         "BottomMargin": 64.0,
                         "Tag": 21,
@@ -1007,6 +1015,8 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
+                        "LeftMargin": 0.0,
+                        "RightMargin": 0.0,
                         "TopMargin": 256.0,
                         "Tag": 24,
                         "Children": [
@@ -1339,6 +1349,484 @@
                     "VisibleForFrame": false,
                     "Name": "item",
                     "ctype": "PanelObjectData"
+                  },
+                  {
+                    "ClipAble": false,
+                    "BackColorAlpha": 102,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleY": 1.0
+                    },
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 96.0,
+                      "Y": 160.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PositionPercentXEnabled": true,
+                    "PositionPercentYEnabled": true,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.5
+                    },
+                    "PercentWidthEnable": true,
+                    "PercentHeightEnable": true,
+                    "PercentWidthEnabled": true,
+                    "PercentHeightEnabled": true,
+                    "PreSize": {
+                      "X": 2.0,
+                      "Y": 1.2
+                    },
+                    "LeftMargin": -96.0,
+                    "RightMargin": -96.0,
+                    "TopMargin": -32.0,
+                    "BottomMargin": -32.0,
+                    "Tag": 131,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "kenney_ui-pack/PNG/grey_button08.png",
+                          "Plist": ""
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 16,
+                        "Scale9OriginY": 10,
+                        "Scale9Width": 17,
+                        "Scale9Height": 23,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 192.0,
+                          "Y": 192.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PercentWidthEnable": true,
+                        "PercentHeightEnable": true,
+                        "PercentWidthEnabled": true,
+                        "PercentHeightEnabled": true,
+                        "PreSize": {
+                          "X": 0.95,
+                          "Y": 0.95
+                        },
+                        "LeftMargin": 9.6,
+                        "RightMargin": 9.6,
+                        "TopMargin": 9.6,
+                        "BottomMargin": 9.6,
+                        "Tag": 132,
+                        "ActionTag": -1954319420,
+                        "Size": {
+                          "X": 364.8,
+                          "Y": 364.8
+                        },
+                        "Name": "bg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "DirectionType": "Vertical",
+                        "HorizontalType": "Align_HorizontalCenter",
+                        "ScrollDirectionType": 0,
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 150
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 192.0,
+                          "Y": 192.0
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.5
+                        },
+                        "PercentWidthEnable": true,
+                        "PercentHeightEnable": true,
+                        "PercentWidthEnabled": true,
+                        "PercentHeightEnabled": true,
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 0.92
+                        },
+                        "TopMargin": 15.36,
+                        "BottomMargin": 15.36,
+                        "Tag": 133,
+                        "ActionTag": 1829436782,
+                        "Size": {
+                          "X": 384.0,
+                          "Y": 353.28
+                        },
+                        "Name": "list",
+                        "ctype": "ListViewObjectData"
+                      },
+                      {
+                        "ClipAble": false,
+                        "BackColorAlpha": 102,
+                        "SingleColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "FirstColor": {
+                          "R": 150,
+                          "G": 200
+                        },
+                        "EndColor": {},
+                        "ColorVector": {
+                          "ScaleY": 1.0
+                        },
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 1.0
+                        },
+                        "Position": {
+                          "X": 192.0,
+                          "Y": 368.64
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.5,
+                          "Y": 0.96
+                        },
+                        "PercentWidthEnable": true,
+                        "PercentHeightEnable": true,
+                        "PercentWidthEnabled": true,
+                        "PercentHeightEnabled": true,
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 0.2
+                        },
+                        "TopMargin": 15.36,
+                        "BottomMargin": 291.84,
+                        "Tag": 134,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Default",
+                              "Path": "Default/ImageFile.png",
+                              "Plist": ""
+                            },
+                            "Scale9Width": 46,
+                            "Scale9Height": 46,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 192.0,
+                              "Y": 38.4
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.1198,
+                              "Y": 0.599
+                            },
+                            "LeftMargin": 169.0,
+                            "RightMargin": 169.0,
+                            "TopMargin": 15.4,
+                            "BottomMargin": 15.4,
+                            "Tag": 135,
+                            "ActionTag": 1346911983,
+                            "Size": {
+                              "X": 46.0,
+                              "Y": 46.0
+                            },
+                            "VisibleForFrame": false,
+                            "Name": "bg",
+                            "ctype": "ImageViewObjectData"
+                          },
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "文本描述",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/red_button10.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button01.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/blue_button00.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 160,
+                            "Scale9Height": 27,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 15.36,
+                              "Y": 38.4
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.04,
+                              "Y": 0.5
+                            },
+                            "PercentWidthEnable": true,
+                            "PercentHeightEnable": true,
+                            "PercentWidthEnabled": true,
+                            "PercentHeightEnabled": true,
+                            "PreSize": {
+                              "X": 0.75,
+                              "Y": 0.95
+                            },
+                            "LeftMargin": 15.36,
+                            "RightMargin": 80.64,
+                            "TopMargin": 1.92,
+                            "BottomMargin": 1.92,
+                            "Tag": 136,
+                            "ActionTag": -1314859285,
+                            "Size": {
+                              "X": 288.0,
+                              "Y": 72.96
+                            },
+                            "Name": "but",
+                            "ctype": "ButtonObjectData"
+                          },
+                          {
+                            "FontSize": 14,
+                            "ButtonText": "",
+                            "TextColor": {
+                              "R": 65,
+                              "G": 65,
+                              "B": 70
+                            },
+                            "DisabledFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/grey_circle.png",
+                              "Plist": ""
+                            },
+                            "PressedFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/yellow_boxTick.png",
+                              "Plist": ""
+                            },
+                            "NormalFileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/yellow_circle.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 15,
+                            "Scale9OriginY": 11,
+                            "Scale9Width": 6,
+                            "Scale9Height": 14,
+                            "OutlineColor": {
+                              "G": 0,
+                              "B": 0
+                            },
+                            "ShadowColor": {
+                              "R": 110,
+                              "G": 110,
+                              "B": 110
+                            },
+                            "ShadowOffsetX": 2.0,
+                            "ShadowOffsetY": -2.0,
+                            "TouchEnable": true,
+                            "AnchorPoint": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 360.96,
+                              "Y": 38.4
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.94,
+                              "Y": 0.5
+                            },
+                            "PercentWidthEnable": true,
+                            "PercentHeightEnable": true,
+                            "PercentWidthEnabled": true,
+                            "PercentHeightEnabled": true,
+                            "PreSize": {
+                              "X": 0.0938,
+                              "Y": 0.4688
+                            },
+                            "LeftMargin": 324.96,
+                            "RightMargin": 23.04,
+                            "TopMargin": 20.4,
+                            "BottomMargin": 20.4,
+                            "Tag": 137,
+                            "Children": [
+                              {
+                                "FileData": {
+                                  "Type": "Normal",
+                                  "Path": "kenney_ui-pack/PNG/grey_crossGrey.png",
+                                  "Plist": ""
+                                },
+                                "Scale9OriginX": 5,
+                                "Scale9OriginY": 5,
+                                "Scale9Width": 8,
+                                "Scale9Height": 8,
+                                "AnchorPoint": {
+                                  "ScaleX": 0.5,
+                                  "ScaleY": 0.5
+                                },
+                                "Position": {
+                                  "X": 0.0,
+                                  "Y": 0.0
+                                },
+                                "Scale": {
+                                  "ScaleX": 1.0,
+                                  "ScaleY": 1.0
+                                },
+                                "CColor": {},
+                                "IconVisible": false,
+                                "PrePosition": {
+                                  "X": 0.0,
+                                  "Y": 0.0
+                                },
+                                "PreSize": {
+                                  "X": 0.5,
+                                  "Y": 0.5
+                                },
+                                "LeftMargin": -9.0,
+                                "RightMargin": 27.0,
+                                "TopMargin": 27.0,
+                                "BottomMargin": -9.0,
+                                "Tag": 138,
+                                "ActionTag": -1184458847,
+                                "Size": {
+                                  "X": 18.0,
+                                  "Y": 18.0
+                                },
+                                "Name": "inco",
+                                "ctype": "ImageViewObjectData"
+                              }
+                            ],
+                            "ActionTag": -1579789994,
+                            "Size": {
+                              "X": 36.0,
+                              "Y": 36.0
+                            },
+                            "Name": "del",
+                            "ctype": "ButtonObjectData"
+                          }
+                        ],
+                        "ActionTag": -1490813760,
+                        "Size": {
+                          "X": 384.0,
+                          "Y": 76.8
+                        },
+                        "Name": "item",
+                        "ctype": "PanelObjectData"
+                      }
+                    ],
+                    "ActionTag": 2140735074,
+                    "Size": {
+                      "X": 384.0,
+                      "Y": 384.0
+                    },
+                    "Name": "load",
+                    "ctype": "PanelObjectData"
                   }
                 ],
                 "ActionTag": 2102136657,
@@ -1374,10 +1862,15 @@
         "HelloWorld.png",
         "kenney_ui-pack/PNG/blue_button00.png",
         "kenney_ui-pack/PNG/blue_button01.png",
+        "kenney_ui-pack/PNG/grey_button08.png",
+        "kenney_ui-pack/PNG/grey_circle.png",
+        "kenney_ui-pack/PNG/grey_crossGrey.png",
         "kenney_ui-pack/PNG/grey_panel.png",
         "kenney_ui-pack/PNG/red_button10.png",
+        "kenney_ui-pack/PNG/yellow_boxTick.png",
         "kenney_ui-pack/PNG/yellow_button00.png",
-        "kenney_ui-pack/PNG/yellow_button01.png"
+        "kenney_ui-pack/PNG/yellow_button01.png",
+        "kenney_ui-pack/PNG/yellow_circle.png"
       ],
       "ctype": "GameFileData"
     }
