@@ -903,7 +903,6 @@ let CreateLayer = cc.Layer.extend({
                 let gameList = pan._gameList;
                 gameList.removeAllChildren();
                 let game = data.game;
-                game = game[game.length - 1];
                 if (game.length) {
                     let item = gameList._item;
                     item.setVisible(true);
