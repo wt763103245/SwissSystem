@@ -124,6 +124,7 @@ let MainSceneLayer = cc.Layer.extend({
         list._item = load.getChildByName("item");
         this.loadList = list;
     },
+    /**打开载入界面 */
     openLoad: function () {
         let load = this.load;
         let list = this.loadList;
@@ -157,7 +158,7 @@ let MainSceneLayer = cc.Layer.extend({
                     this.openLoad();
                 }, this);
             }
-        }
+        } else this.addChild(new MsgLayer("没有存档"));
         item.setVisible(false);
     },
 });

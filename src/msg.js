@@ -19,6 +19,7 @@ let MsgLayer = cc.Layer.extend({
         return true;
     },
     Exit: function () {
+        cc.log("移除消息界面");
         //移除这个界面
         this.removeFromParent();
     },
@@ -28,10 +29,16 @@ let MsgLayer = cc.Layer.extend({
         let text = main.getChildByName("text");
         if (text.getString() !== str) text.setString(str);
         let size = cc.winSize;
+        let width = size.width;
+        let height = size.height;
+        //先居中
+        this.setPosition(width * 0.5, 0);
         this.runAction(
-            cc.moveBy(1.0,
-                size.width * 0.5, size.height * 0.2),
-            cc.callFunc(this.Exit, this),
-        )
+            cc.sequence(
+                cc.moveBy(1.0, 0, height * 0.8),
+                cc.delayTime(0.5),
+                cc.callFunc(this.Exit, this),
+            )
+        );
     },
 });
