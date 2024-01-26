@@ -1001,12 +1001,17 @@ let CreateLayer = cc.Layer.extend({
         //左侧面板ui按钮点击逻辑
         /**@type {(cc.Node|ccui.Layout)[]} 全部中间面板 */
         let centerList = this.centerList;
+        /**左侧面板上全部按钮 */
+        let leftList = this.leftList;
         let butFunc = this.leftListFunc = function (type) {
             for (let i = 0; i < centerList.length; i++) {
                 let _node = centerList[i];
                 let isShow = i === type;
                 _node.setVisible(isShow);
-                if (isShow) this.centerListFunc[i](_node);
+                leftList[i]._but.setBright(!isShow);
+                // leftList[i]._but.setTouchEnabled(!isShow);
+                leftList[i]._but.setEnabled(!isShow);
+                if (isShow) this.centerListFunc[i](_node)
             }
         }.bind(this);
         //循环所有的选项
