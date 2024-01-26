@@ -850,7 +850,7 @@ let CreateLayer = cc.Layer.extend({
 
                     //结束按钮
                     /**@type {ccui.Button} 结束本局按钮 */
-                    let over = pan._over = right.getChildByName("over");
+                    let over = pan._over = pan0.getChildByName("over");
                     over.addTouchEventListener(function (sender, type) {
                         if (type !== 2) return;
                         //开始一局
