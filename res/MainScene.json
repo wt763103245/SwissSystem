@@ -297,8 +297,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "BottomMargin": 256.0,
                         "Tag": 12,
                         "Children": [
@@ -473,8 +471,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 64.0,
                         "BottomMargin": 192.0,
                         "Tag": 15,
@@ -653,8 +649,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 128.0,
                         "BottomMargin": 128.0,
                         "Tag": 18,
@@ -834,8 +828,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 192.0,
                         "BottomMargin": 64.0,
                         "Tag": 21,
@@ -1015,8 +1007,6 @@
                           "X": 1.0,
                           "Y": 0.2
                         },
-                        "LeftMargin": 0.0,
-                        "RightMargin": 0.0,
                         "TopMargin": 256.0,
                         "Tag": 24,
                         "Children": [
@@ -1365,6 +1355,8 @@
                     "ColorVector": {
                       "ScaleY": 1.0
                     },
+                    "Scale9Width": 1,
+                    "Scale9Height": 1,
                     "TouchEnable": true,
                     "AnchorPoint": {
                       "ScaleX": 0.5,
@@ -1470,6 +1462,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
@@ -1525,6 +1519,8 @@
                         "ColorVector": {
                           "ScaleY": 1.0
                         },
+                        "Scale9Width": 1,
+                        "Scale9Height": 1,
                         "TouchEnable": true,
                         "AnchorPoint": {
                           "ScaleX": 0.5,
@@ -1727,7 +1723,7 @@
                               "ScaleY": 0.5
                             },
                             "Position": {
-                              "X": 360.96,
+                              "X": 357.12,
                               "Y": 38.4
                             },
                             "Scale": {
@@ -1739,7 +1735,7 @@
                             "PositionPercentXEnabled": true,
                             "PositionPercentYEnabled": true,
                             "PrePosition": {
-                              "X": 0.94,
+                              "X": 0.93,
                               "Y": 0.5
                             },
                             "PercentWidthEnable": true,
@@ -1750,10 +1746,10 @@
                               "X": 0.0938,
                               "Y": 0.4688
                             },
-                            "LeftMargin": 324.96,
-                            "RightMargin": 23.04,
-                            "TopMargin": 20.4,
-                            "BottomMargin": 20.4,
+                            "LeftMargin": 321.1008,
+                            "RightMargin": 26.88,
+                            "TopMargin": 20.3981,
+                            "BottomMargin": 20.3981,
                             "Tag": 137,
                             "Children": [
                               {
@@ -1771,8 +1767,8 @@
                                   "ScaleY": 0.5
                                 },
                                 "Position": {
-                                  "X": 0.0,
-                                  "Y": 0.0
+                                  "X": 18.0096,
+                                  "Y": 18.0019
                                 },
                                 "Scale": {
                                   "ScaleX": 1.0,
@@ -1780,18 +1776,20 @@
                                 },
                                 "CColor": {},
                                 "IconVisible": false,
+                                "PositionPercentXEnabled": true,
+                                "PositionPercentYEnabled": true,
                                 "PrePosition": {
-                                  "X": 0.0,
-                                  "Y": 0.0
-                                },
-                                "PreSize": {
                                   "X": 0.5,
                                   "Y": 0.5
                                 },
-                                "LeftMargin": -9.0,
-                                "RightMargin": 27.0,
-                                "TopMargin": 27.0,
-                                "BottomMargin": -9.0,
+                                "PreSize": {
+                                  "X": 0.4997,
+                                  "Y": 0.4999
+                                },
+                                "LeftMargin": 9.0096,
+                                "RightMargin": 9.0096,
+                                "TopMargin": 9.0019,
+                                "BottomMargin": 9.0019,
                                 "Tag": 138,
                                 "ActionTag": -1184458847,
                                 "Size": {
@@ -1804,8 +1802,8 @@
                             ],
                             "ActionTag": -1579789994,
                             "Size": {
-                              "X": 36.0,
-                              "Y": 36.0
+                              "X": 36.0192,
+                              "Y": 36.0038
                             },
                             "Name": "del",
                             "ctype": "ButtonObjectData"
@@ -1818,6 +1816,121 @@
                         },
                         "Name": "item",
                         "ctype": "PanelObjectData"
+                      },
+                      {
+                        "FontSize": 14,
+                        "ButtonText": "",
+                        "TextColor": {
+                          "R": 65,
+                          "G": 65,
+                          "B": 70
+                        },
+                        "NormalFileData": {
+                          "Type": "Normal",
+                          "Path": "kenney_ui-pack/PNG/red_circle.png",
+                          "Plist": ""
+                        },
+                        "Scale9OriginX": 15,
+                        "Scale9OriginY": 11,
+                        "Scale9Width": 6,
+                        "Scale9Height": 14,
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "TouchEnable": true,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 372.48,
+                          "Y": 372.48
+                        },
+                        "Scale": {
+                          "ScaleX": 0.95,
+                          "ScaleY": 0.95
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PositionPercentXEnabled": true,
+                        "PositionPercentYEnabled": true,
+                        "PrePosition": {
+                          "X": 0.97,
+                          "Y": 0.97
+                        },
+                        "PreSize": {
+                          "X": 0.0938,
+                          "Y": 0.0938
+                        },
+                        "LeftMargin": 354.48,
+                        "RightMargin": -6.48,
+                        "TopMargin": -6.48,
+                        "BottomMargin": 354.48,
+                        "Tag": 135,
+                        "Children": [
+                          {
+                            "FileData": {
+                              "Type": "Normal",
+                              "Path": "kenney_ui-pack/PNG/grey_crossWhite.png",
+                              "Plist": ""
+                            },
+                            "Scale9OriginX": 5,
+                            "Scale9OriginY": 5,
+                            "Scale9Width": 8,
+                            "Scale9Height": 8,
+                            "AnchorPoint": {
+                              "ScaleX": 0.5,
+                              "ScaleY": 0.5
+                            },
+                            "Position": {
+                              "X": 18.0,
+                              "Y": 18.0
+                            },
+                            "Scale": {
+                              "ScaleX": 1.0,
+                              "ScaleY": 1.0
+                            },
+                            "CColor": {},
+                            "IconVisible": false,
+                            "PositionPercentXEnabled": true,
+                            "PositionPercentYEnabled": true,
+                            "PrePosition": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "PreSize": {
+                              "X": 0.5,
+                              "Y": 0.5
+                            },
+                            "LeftMargin": 9.0,
+                            "RightMargin": 9.0,
+                            "TopMargin": 9.0,
+                            "BottomMargin": 9.0,
+                            "Tag": 136,
+                            "ActionTag": 458827282,
+                            "Size": {
+                              "X": 18.0,
+                              "Y": 18.0
+                            },
+                            "Name": "bg",
+                            "ctype": "ImageViewObjectData"
+                          }
+                        ],
+                        "ActionTag": -1777346873,
+                        "Size": {
+                          "X": 36.0,
+                          "Y": 36.0
+                        },
+                        "Name": "exit",
+                        "ctype": "ButtonObjectData"
                       }
                     ],
                     "ActionTag": 2140735074,
@@ -1865,8 +1978,10 @@
         "kenney_ui-pack/PNG/grey_button08.png",
         "kenney_ui-pack/PNG/grey_circle.png",
         "kenney_ui-pack/PNG/grey_crossGrey.png",
+        "kenney_ui-pack/PNG/grey_crossWhite.png",
         "kenney_ui-pack/PNG/grey_panel.png",
         "kenney_ui-pack/PNG/red_button10.png",
+        "kenney_ui-pack/PNG/red_circle.png",
         "kenney_ui-pack/PNG/yellow_boxTick.png",
         "kenney_ui-pack/PNG/yellow_button00.png",
         "kenney_ui-pack/PNG/yellow_button01.png",

@@ -12,6 +12,8 @@
     "modules" : ["cocos2d", "cocostudio"],
 
     "jsList" : [
+        "src/tools/cocos2d_js.js",
+
         "src/resource.js",
         "src/msg.js",
         "src/MainMenu.js",

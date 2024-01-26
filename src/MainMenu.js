@@ -3,6 +3,10 @@ let MainSceneLayer = cc.Layer.extend({
     // sprite:null,
     /**@type {(cc.Node|ccui.Layout)[]} 主界面菜单选项 */
     menuList: [],
+    /**@type {cc.Node|ccui.Layout} */
+    load: null,
+    /**@type {cc.Node|ccui.ListView} */
+    loadList: null,
     ctor: function () {
         //////////////////////////////
         // 1. super init first
@@ -39,16 +43,16 @@ let MainSceneLayer = cc.Layer.extend({
         this.addChild(this.sprite, 0);
         */
 
-        this.initMenuList(Scene);
+        let center = Scene.getChildByName("main").getChildByName("Center");
+        this.initMenuList(center);
+        this.initLoad(center);
 
         return true;
     },
     /**初始化menuList相关控件
-     * @param {cc.Node} Scene 主界面ui节点
+     * @param {cc.Node} center 主界面ui面板
      */
-    initMenuList: function (Scene) {
-        /**@type {cc.Node|ccui.Layout} 中间容器 */
-        let center = Scene.getChildByName("main").getChildByName("Center");
+    initMenuList: function (center) {
         /**@type {cc.Node|ccui.ListView} 中间的列表容器 */
         let menuListNode = center.getChildByName("menuList");
         /**@type {Number} 最大菜单数 */
@@ -75,9 +79,8 @@ let MainSceneLayer = cc.Layer.extend({
         menu1But.addTouchEventListener(function (sender, type) {
             if (type != 2) return;
             cc.log("点击读取按钮")
-            //todo:打开选择存档界面
-            let newUi = new CreateLayer(data);
-            this.addChild(newUi);
+            //打开选择存档界面
+            this.openLoad();
         }, this);
 
         if (menuListLength > 2) {
@@ -99,6 +102,63 @@ let MainSceneLayer = cc.Layer.extend({
         if (type != 2) return;
         cc.log("执行退出逻辑");
         this.onExit();
+    },
+    /**初始化load面板
+     * @param {cc.Node} center 主界面ui面板
+     */
+    initLoad: function (center) {
+        /**@type {cc.Node|ccui.Layout} */
+        let load = center.getChildByName("load");
+        this.load = load;
+        //初始隐藏
+        load.setVisible(false);
+
+        /**@type {ccui.Button} */
+        let exit = load.getChildByName("exit");
+        exit.addTouchEventListener(function (sender, type) {
+            if (type !== 2) return;
+            load.setVisible(false);
+        }, this)
+
+        let list = load.getChildByName("list");
+        list._item = load.getChildByName("item");
+        this.loadList = list;
+    },
+    openLoad: function () {
+        let load = this.load;
+        let list = this.loadList;
+        let item = list._item;
+        let dataList = UtilWt.cc.sys.localStorage.getList("SwissSystem_wt_saveName");
+        if (dataList && dataList.length > 0) {
+            load.setVisible(true);
+            item.setVisible(true);
+            for (let gameName of dataList) {
+                let _item = item.clone();
+                let but = _item.getChildByName("but");
+                but._data = gameName;
+                but.addTouchEventListener(function (sender, type) {
+                    if (type !== 2) return;
+                    //点击载入对应存档
+                    this.addChild(
+                        new CreateLayer(
+                            UtilWt.cc.sys.localStorage.getObject(
+                                sender._data)));
+                    //隐藏当前界面
+                    load.setVisible(true);
+                }, this);
+
+                let del = _item.getChildByName("del");
+                del._data = gameName;
+                del.addTouchEventListener(function (sender, type) {
+                    if (type !== 2) return;
+                    //点击删除对应存档
+                    cc.sys.localStorage.removeItem(sender._data);
+                    //刷新页面
+                    this.openLoad();
+                }, this);
+            }
+        }
+        item.setVisible(false);
     },
 });
 

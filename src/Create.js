@@ -62,6 +62,7 @@ let CreateLayer = cc.Layer.extend({
     gameDate: [1, 0, -1],
     /**@type {Number} 当前对局序号。当前this.data.game[第几场][currentGame] */
     currentGame: -1,
+    saveGameNameFileName: "SwissSystem_wt_saveName",
     /**创建方法
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
@@ -135,7 +136,7 @@ let CreateLayer = cc.Layer.extend({
         this.initUi_Left(main);
     },
     Exit: function (sender, type = 2) {
-        if (type !== 2) return;
+        if (type !== 2 || this.data?.name === this.saveGameNameFileName) return;
         //保存功能
         this.Save();
 
@@ -144,12 +145,23 @@ let CreateLayer = cc.Layer.extend({
     },
     /**保存数据 */
     Save: function () {
+        this.addChild(new MsgLayer("开始保存中"));
         /**关键数据 */
         let data = this.data;
         /**游戏名称 */
         let name = this.data?.name;
         //判空，然后保存数据
-        if (name) cc.sys.localStorage.setItem(name, JSON.stringify(data));
+        if (name) {
+            cc.sys.localStorage.setItem(name, JSON.stringify(data))
+            let saveName = this.saveGameNameFileName
+            let gameList = UtilWt.cc.sys.localStorage.getList(saveName);
+            if (!(name in gameList)) {
+                gameList.push(name);
+                UtilWt.cc.sys.localStorage.setList(saveName, gameList);
+            }
+        }
+
+        this.addChild(new MsgLayer("保存结束"));
     },
     /**初始化中部ui
      * @param {ccui.Layout|cc.Node} main 主界面基础容器
@@ -468,6 +480,8 @@ let CreateLayer = cc.Layer.extend({
                     for (let i = 0; i < scoreList.length; i++) {
                         let _node = scoreList[i];
                         let _str = listData[i];
+                        cc.log(_node);
+                        cc.log(typeof _node);
                         if (_node.getString() !== _str) _node.setString(_str);
                     }
                 }
