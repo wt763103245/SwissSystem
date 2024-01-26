@@ -970,8 +970,8 @@ let CreateLayer = cc.Layer.extend({
                 }
             },
         ];
-        //循环所有的内容面板
-        for (let i = 0; i < center.getChildrenCount(); i++) {
+        //循环所有的内容面板，去掉bg1和bg2
+        for (let i = 0; i < center.getChildrenCount() - 2; i++) {
             /**@type {ccui.Layout|cc.Node} 显示的内容选项基础容器 */
             let child = center.getChildByName("pan" + i);
             //初始化显示第一个
