@@ -1008,9 +1008,9 @@ let CreateLayer = cc.Layer.extend({
                 let _node = centerList[i];
                 let isShow = i === type;
                 _node.setVisible(isShow);
-                leftList[i]._but.setBright(!isShow);
-                // leftList[i]._but.setTouchEnabled(!isShow);
-                leftList[i]._but.setEnabled(!isShow);
+                let leftBut = leftList[i]._but;
+                leftBut.setBright(!isShow);
+                leftBut.setEnabled(!isShow);
                 if (isShow) this.centerListFunc[i](_node)
             }
         }.bind(this);
