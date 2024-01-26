@@ -221,7 +221,7 @@ let CreateLayer = cc.Layer.extend({
                 let butText = !gameNameText ? "创建" : "修改";
                 //设置对应文本
                 if (but.getTitleText() !== butText) but.setTitleText(butText);
-            },
+            }.bind(this),
             /**玩家信息面板
              * @param {ccui.Layout|cc.Node} pan 玩家信息面板
              */
@@ -404,7 +404,7 @@ let CreateLayer = cc.Layer.extend({
                 //隐藏示例
                 item.setVisible(false);
                 playerList._list = playerListData;
-            },
+            }.bind(this),
             /**规则添加面板
              * @param pan 规则添加面板
              */
@@ -563,7 +563,7 @@ let CreateLayer = cc.Layer.extend({
                         typeList._list.push(_item);
                     }
                 }
-            },
+            }.bind(this),
             /**对局面板
              * @param pan 对局面板
              */
@@ -796,7 +796,7 @@ let CreateLayer = cc.Layer.extend({
                 item.setVisible(false);
                 //移动滚动容器中的内容到最上方
                 gameList.scrollToTop(0.01, true);
-            },
+            }.bind(this),
             /**结束面板
              * @param pan
              */
@@ -976,7 +976,7 @@ let CreateLayer = cc.Layer.extend({
                     //移动滚动容器中的内容到最上方
                     gameList.scrollToTop(0.01, true);
                 }
-            },
+            }.bind(this),
         ];
         //循环所有的内容面板，去掉bg1和bg2
         for (let i = 0; i < center.getChildrenCount() - 2; i++) {
@@ -1004,11 +1004,11 @@ let CreateLayer = cc.Layer.extend({
         let butFunc = this.leftListFunc = function (type) {
             for (let i = 0; i < centerList.length; i++) {
                 let _node = centerList[i];
-                let isShow = i !== type;
+                let isShow = i === type;
                 _node.setVisible(isShow);
                 if (isShow) this.centerListFunc[i](_node);
             }
-        };
+        }.bind(this);
         //循环所有的选项
         for (let i = 0; i < menuList.getChildrenCount(); i++) {
             /**@type {ccui.Layout|cc.Node} 对应菜单选项基础容器 */
