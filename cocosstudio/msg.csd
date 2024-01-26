@@ -9,8 +9,8 @@
           <AbstractNodeData Name="main" ActionTag="225143518" Tag="127" IconVisible="False" LeftMargin="-150.0000" RightMargin="-150.0000" TopMargin="-15.0000" BottomMargin="-15.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="51" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="300.0000" Y="30.0000" />
             <Children>
-              <AbstractNodeData Name="bg" ActionTag="-1499737125" Alpha="103" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="50.0000" RightMargin="50.0000" TopMargin="-8.2000" BottomMargin="-11.8000" LeftEage="62" RightEage="62" TopEage="16" BottomEage="16" Scale9OriginX="62" Scale9OriginY="16" Scale9Width="76" Scale9Height="18" ctype="ImageViewObjectData">
-                <Size X="200.0000" Y="50.0000" />
+              <AbstractNodeData Name="bg" ActionTag="-1499737125" Alpha="103" Tag="128" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="49.9950" RightMargin="49.9950" TopMargin="-8.2005" BottomMargin="-11.8005" LeftEage="62" RightEage="62" TopEage="16" BottomEage="16" Scale9OriginX="62" Scale9OriginY="16" Scale9Width="76" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="200.0100" Y="50.0010" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="150.0000" Y="13.2000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -24,7 +24,7 @@
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="150.0000" Y="15.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="0" B="0" />
+                <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.6000" Y="1.0000" />
                 <OutlineColor A="255" R="255" G="0" B="0" />

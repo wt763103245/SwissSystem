@@ -67,7 +67,7 @@ let CreateLayer = cc.Layer.extend({
      * @param {Object} data 保存数据，如果没有则表示是创建
      * @returns {boolean}
      */
-    ctor: function (data = {}) {
+    ctor: function (data = null) {
         this._super();
 
         /////////////////////////////
@@ -823,7 +823,7 @@ let CreateLayer = cc.Layer.extend({
                     // //循环清空玩家名称
                     // for (let _node of _list) if (_node.getTitleText() !== "") _node.setTitleText("");
                     /**@type {cc.Node|ccui.Button} 平局 */
-                    let winNo = pan._winNo = right.getChildByName("noWin");
+                    let winNo = pan._winNo = pan1.getChildByName("noWin");
 
                     let newList = _list.slice(); // 创建一个新数组，它是_playerList的浅复制
                     newList.push(winNo); // 在新数组后面添加一个元素

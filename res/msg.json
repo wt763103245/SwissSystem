@@ -98,15 +98,15 @@
                   "X": 0.6667,
                   "Y": 1.6667
                 },
-                "LeftMargin": 50.0,
-                "RightMargin": 50.0,
-                "TopMargin": -8.2,
-                "BottomMargin": -11.8,
+                "LeftMargin": 49.995,
+                "RightMargin": 49.995,
+                "TopMargin": -8.2005,
+                "BottomMargin": -11.8005,
                 "Tag": 128,
                 "ActionTag": -1499737125,
                 "Size": {
-                  "X": 200.0,
-                  "Y": 50.0
+                  "X": 200.01,
+                  "Y": 50.001
                 },
                 "Alpha": 103,
                 "Name": "bg",
@@ -141,11 +141,7 @@
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "CColor": {
-                  "R": 0,
-                  "G": 0,
-                  "B": 0
-                },
+                "CColor": {},
                 "IconVisible": false,
                 "PositionPercentXEnabled": true,
                 "PositionPercentYEnabled": true,
