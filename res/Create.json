@@ -1372,7 +1372,7 @@
                         },
                         "PreSize": {
                           "X": 0.1976,
-                          "Y": 0.0313
+                          "Y": 0.0312
                         },
                         "LeftMargin": 168.4,
                         "RightMargin": 278.4,
@@ -1523,6 +1523,7 @@
                               "X": 1.0,
                               "Y": 1.0
                             },
+                            "TopMargin": 0.0,
                             "Tag": 38,
                             "ActionTag": -1281475856,
                             "Size": {
@@ -3580,7 +3581,7 @@
                               "X": 133.632,
                               "Y": 20.0
                             },
-                            "Name": "score3",
+                            "Name": "score2",
                             "ctype": "TextFieldObjectData"
                           },
                           {
@@ -5604,13 +5605,13 @@
                                   "Y": 0.1531
                                 },
                                 "LeftMargin": 292.32,
-                                "RightMargin": -203.92,
+                                "RightMargin": -203.928,
                                 "TopMargin": 135.5,
                                 "BottomMargin": 135.5,
                                 "Tag": 162,
                                 "ActionTag": 509416075,
                                 "Size": {
-                                  "X": 190.0,
+                                  "X": 190.008,
                                   "Y": 49.0
                                 },
                                 "Name": "over",

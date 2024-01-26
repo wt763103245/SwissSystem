@@ -589,7 +589,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="pan2" Visible="False" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="pan2" ActionTag="1459519888" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="556.8000" Y="640.0000" />
                     <Children>
                       <AbstractNodeData Name="title" ActionTag="-496577218" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="240.9000" RightMargin="240.9000" TopMargin="119.4000" BottomMargin="490.6000" FontSize="30" LabelText="规 则" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -732,7 +732,7 @@
                             <OutlineColor A="255" R="255" G="0" B="0" />
                             <ShadowColor A="255" R="110" G="110" B="110" />
                           </AbstractNodeData>
-                          <AbstractNodeData Name="score3" ActionTag="-421167886" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="139.2000" RightMargin="5.5680" TopMargin="112.0000" BottomMargin="188.0000" TouchEnable="True" FontSize="20" IsCustomSize="True" LabelText="0" PlaceHolderText="请输入分数" MaxLengthText="10" ctype="TextFieldObjectData">
+                          <AbstractNodeData Name="score2" ActionTag="-421167886" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="139.2000" RightMargin="5.5680" TopMargin="112.0000" BottomMargin="188.0000" TouchEnable="True" FontSize="20" IsCustomSize="True" LabelText="0" PlaceHolderText="请输入分数" MaxLengthText="10" ctype="TextFieldObjectData">
                             <Size X="133.6320" Y="20.0000" />
                             <AnchorPoint ScaleY="1.0000" />
                             <Position X="139.2000" Y="208.0000" />
@@ -1158,8 +1158,8 @@
                                 <EndColor A="255" R="255" G="255" B="255" />
                                 <ColorVector ScaleY="1.0000" />
                               </AbstractNodeData>
-                              <AbstractNodeData Name="over" ActionTag="509416075" Tag="162" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="292.3200" RightMargin="-203.9200" TopMargin="135.5000" BottomMargin="135.5000" TouchEnable="True" FontSize="30" ButtonText="结束本局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                                <Size X="190.0000" Y="49.0000" />
+                              <AbstractNodeData Name="over" ActionTag="509416075" Tag="162" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentWidthEnabled="True" LeftMargin="292.3200" RightMargin="-203.9280" TopMargin="135.5000" BottomMargin="135.5000" TouchEnable="True" FontSize="30" ButtonText="结束本局" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="160" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                                <Size X="190.0080" Y="49.0000" />
                                 <AnchorPoint ScaleY="0.5000" />
                                 <Position X="292.3200" Y="160.0000" />
                                 <Scale ScaleX="0.9000" ScaleY="0.9000" />
