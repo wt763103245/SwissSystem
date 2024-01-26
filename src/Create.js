@@ -205,6 +205,9 @@ let CreateLayer = cc.Layer.extend({
                     /**@type {Boolean} 是否已经初始化 */
                     pan._init = true;
                 }
+
+                //显示
+                pan.setVisible(true);
                 /**@type {ccui.TextField} 比赛名称 */
                 let gameName = pan._gameName;
                 /**@type {String} 获得当前比赛的名称 */
@@ -287,6 +290,8 @@ let CreateLayer = cc.Layer.extend({
                     pan._init = true;
                 }
 
+                //显示
+                pan.setVisible(true);
                 //编号
                 // let text0 = pan._text0;
                 let id = pan._id;
@@ -463,6 +468,9 @@ let CreateLayer = cc.Layer.extend({
                     typeList._item = left.getChildByName("item");
                     pan._list = typeList;
                 }
+
+                //显示
+                pan.setVisible(true);
                 //刷新
                 /**@type {Number[]} 对局规则 */
                 let typeData = this.gameDate;
@@ -480,8 +488,6 @@ let CreateLayer = cc.Layer.extend({
                     for (let i = 0; i < scoreList.length; i++) {
                         let _node = scoreList[i];
                         let _str = listData[i];
-                        cc.log(_node);
-                        cc.log(typeof _node);
                         if (_node.getString() !== _str) _node.setString(_str);
                     }
                 }
@@ -713,6 +719,8 @@ let CreateLayer = cc.Layer.extend({
                     pan._start = start;
                 }
 
+                //显示
+                pan.setVisible(true);
                 //刷新
                 //左侧列表容器
                 let gameList = pan._list;
@@ -802,8 +810,6 @@ let CreateLayer = cc.Layer.extend({
                     let pan0 = right.getChildByName("pan0");
                     //初始显示这个面板
                     pan0.setVisible(true);
-                    //之前可能被隐藏
-                    pan.setVisible(true);
                     /**@type {ccui.ListView|cc.Node} 玩家分数列表容器 */
                     let _playerList = pan0.getChildByName("playerList");
                     /**@type {ccui.Layout|cc.Node} 玩家分数面板 */
@@ -865,6 +871,8 @@ let CreateLayer = cc.Layer.extend({
                     pan._gameList = gameList;
                 }
 
+                //显示
+                pan.setVisible(true);
                 //刷新
                 //右侧0
                 let data = this.data;
@@ -974,10 +982,10 @@ let CreateLayer = cc.Layer.extend({
         for (let i = 0; i < center.getChildrenCount() - 2; i++) {
             /**@type {ccui.Layout|cc.Node} 显示的内容选项基础容器 */
             let child = center.getChildByName("pan" + i);
-            //初始化显示第一个
-            child.setVisible(i === 0);
             let _func = funcList[i];
             if (_func) (_func.bind(this))(child);
+            //初始化显示第一个
+            child.setVisible(i === 0);
             //添加到内容
             this.centerList.push(child);
         }
